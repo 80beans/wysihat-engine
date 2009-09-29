@@ -121,7 +121,8 @@ var Facebox = Class.create({
 		
 		contentWrapper = $$('#facebox .content').first();
 		if (klass) contentWrapper.addClassName(klass);
-		contentWrapper.insert({bottom: data});
+		//contentWrapper.insert({bottom: data});
+		contentWrapper.update(data);
 		
     $$('#facebox .body').first().childElements().each(function(elem,i){
      elem.show();

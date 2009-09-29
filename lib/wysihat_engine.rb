@@ -28,7 +28,7 @@ module ActionView
           when "link"
             buttons << "toolbar.addButton({label : \'Link\', handler: function(editor) { return editor.promptLink(editor); } })\n"
           when "html"
-            buttons << "toolbar.addButton({label : \'HTML\', handler: function(editor) { return editor.promptHTML(editor); } })\n"
+            buttons << "toolbar.addButton({label : \'HTML\', handler: function(editor) { return editor.faceboxHTML(editor); } })\n"
           else
             buttons << "toolbar.addButton({label : \'#{b.to_s.split('_').map {|w| w.capitalize}.join}\'});\n"
           end
@@ -76,11 +76,15 @@ module ActionView
               }
             },
             
-            promptHTML: function()
+            faceboxHTML: function()
             {
-              var value = prompt('Please enter some HTML', '');
-              if(value)
-                this.insertHTML(value);
+              facebox.loading();
+              new Effect.Appear($('facebox'), {duration: .3});
+              iframe = this
+              facebox.reveal('<textarea id=\"html_editor\" style=\"width:100%; height:400px;\">' + iframe.contentWindow.document.body.innerHTML + '</textarea>', null);         
+              Event.observe('html_editor', 'change', function(event) {
+                iframe.contentWindow.document.body.innerHTML = $('html_editor').value;
+              });
             }
           }
           
