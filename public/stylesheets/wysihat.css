@@ -1,0 +1,68 @@
+div.editor_toolbar a{
+  float:left;
+  width:16px;
+  height:16px;
+  margin:5px;
+  background-repeat: no-repeat;
+}
+
+div.editor_toolbar span{
+  display:none;
+}
+
+.editor_toolbar .bold {
+  background-image: url('../images/text_bold.png');
+}
+
+.editor_toolbar .italic {
+  background-image: url('../images/text_italic.png');
+}
+
+.editor_toolbar .underline {
+  background-image: url('../images/text_underline.png');
+}
+
+.editor_toolbar .justifyleft {
+  background-image: url('../images/text_align_left.png');
+}
+
+.editor_toolbar .justifycenter {
+  background-image: url('../images/text_align_center.png');
+}
+
+.editor_toolbar .justifyright {
+  background-image: url('../images/text_align_right.png');
+}
+
+.editor_toolbar .undo {
+  background-image: url('../images/arrow_undo.png');
+}
+
+.editor_toolbar .redo {
+  background-image: url('../images/arrow_redo.png');
+}
+
+.editor_toolbar .insertorderedlist {
+  background-image: url('../images/text_list_numbers.png');
+}
+
+.editor_toolbar .insertunorderedlist {
+  background-image: url('../images/text_list_bullets.png');
+}
+
+.editor_toolbar .link {
+  background-image: url('../images/link.png');
+}
+
+.editor_toolbar .image {
+  background-image: url('../images/image.png');
+}
+
+.editor_toolbar .html {
+  background-image: url('../images/page_code.png');
+}
+
+iframe.editor{
+  height:400px;
+  width:100%;
+}
