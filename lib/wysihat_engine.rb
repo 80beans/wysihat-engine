@@ -33,8 +33,8 @@ module ActionView
             
           end
         else
-          ['Bold', 'Italic', 'Underline'].each do |b|
-            buttons << "toolbar.addButton({label : \'#{b}\'});\n"
+          [:bold, :italic, :underline, :justify_left, :justify_center, :justify_right, :insert_ordered_list, :insert_unordered_list, :undo, :redo, :link, :html, :image].each do |b|
+            buttons << "toolbar.addButton({label : \'#{b.to_s.split('_').map {|w| w.capitalize}.join}\'});\n"
           end
         end
             

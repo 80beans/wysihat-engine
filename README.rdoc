@@ -45,7 +45,7 @@ You'll probably want to specify which fields end up in your editor. Just add a :
 
 Some buttons you can add are: :bold, :italic, :underline, :justify_left, :justify_center, :justify_right, :insert_ordered_list, :insert_unordered_list, :undo, :redo, :link, :html and :image. You can check out wysihat (http://github.com/josh/wysihat) to find more options.
 
-If you don't specify any buttons, wysihat-engine will default to :bold, :italic and :underline.
+If you don't specify any buttons, wysihat-engine will use the whole list.
   
   <% form_for(@page) do |f| %>
     <%= f.error_messages %>
