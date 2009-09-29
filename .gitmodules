@@ -1,9 +1,0 @@
-[submodule "vendor/plugins/paperclip"]
-	path = vendor/plugins/paperclip
-	url = git://github.com/thoughtbot/paperclip.git
-[submodule "vendor/plugins/resource_controller"]
-	path = vendor/plugins/resource_controller
-	url = git://github.com/giraffesoft/resource_controller.git
-[submodule "vendor/plugins/responds_to_parent"]
-	path = vendor/plugins/responds_to_parent
-	url = git://github.com/markcatley/responds_to_parent.git
