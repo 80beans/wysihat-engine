@@ -1,0 +1,84 @@
+= WysihatEngine
+
+A simple Engine to get everyone up and running with Wysihat (http://github.com/josh/wysihat) fast.
+
+== Installation
+
+First, install the plugin
+
+  script/plugin install git://github.com/80beans/wysihat-engine.git
+  
+Then copy the required files to your app by running this rake task:
+  
+  rake wysihat_engine:sync
+
+And migrate your database
+  
+  rake db:migrate
+
+Don't forget to add the following line to your layouts file:
+  
+  <%= javascript_include_tag :defaults, 'wysihat' %>
+
+If you want to use file uploading, you should also include the facebox javascript file and the facebox css file:
+
+  <%= javascript_include_tag :defaults, 'wysihat', 'facebox' %>
+  <%= stylesheet_link_tag 'facebox' %>
+
+== Examples
+
+Now you can use the wysihat_editor form field in your app, like this:
+
+  <% form_for(@page) do |f| %>
+    <%= f.error_messages %>
+
+    <p>
+      <%= f.label :content %><br />
+      <%= f.wysihat_editor :content %>
+    </p>
+    <p>
+      <%= f.submit 'Create' %>
+    </p>
+  <% end %>
+
+You'll probably want to specify which fields end up in your editor. Just add a :buttons => [] option to the wysihat_editor.
+
+Some buttons you can add are: :bold, :italic, :underline, :justify_left, :justify_center, :justify_right, :insert_ordered_list, :insert_unordered_list, :undo, :redo, :link, :html and :image. You can check out wysihat (http://github.com/josh/wysihat) to find more options.
+
+If you don't specify any buttons, wysihat-engine will default to :bold, :italic and :underline.
+  
+  <% form_for(@page) do |f| %>
+    <%= f.error_messages %>
+
+    <p>
+      <%= f.label :content %><br />
+      <%= f.wysihat_editor :content, :buttons => [:bold, :italic, :underline ]%>
+    </p>
+    <p>
+      <%= f.submit 'Create' %>
+    </p>
+  <% end %>
+  
+The wysihat-engine even has image uploads baked in! It's very simple, just add :image to your buttons array.
+
+  <% form_for(@page) do |f| %>
+    <%= f.error_messages %>
+
+    <p>
+      <%= f.label :content %><br />
+      <%= f.wysihat_editor :content, :buttons => [:image]%>
+    </p>
+    <p>
+      <%= f.submit 'Create' %>
+    </p>
+  <% end %>
+
+== Contributing
+
+Want to help? Great. Please fork the project and send a pull request when you're done! :)
+
+Stay tuned, we'll be adding some great stuff soon!
+
+== License
+
+Copyright (c) 2009 80beans, released under the MIT license

@@ -1,0 +1,2 @@
+module WysihatFilesHelper
+end

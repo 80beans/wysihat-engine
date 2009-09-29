@@ -1,0 +1,3 @@
+<li id="wysihat_file_<%= wysihat_file.id %>">
+  <%= link_to_function(wysihat_file.file_file_name, "$$('iframe##{params[:editor]}')[0].insertImage(this.href); facebox.close();", :href => wysihat_file.file.url) %>
+</li>

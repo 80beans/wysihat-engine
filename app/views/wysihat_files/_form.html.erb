@@ -1,0 +1,13 @@
+<% form_for @wysihat_file, :html => { :multipart => true, :target => 'file_upload' } do |f| %>
+  
+  <p>
+    <%= f.label :file %><br/>
+    <%= f.file_field :file %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+  
+<% end %>
+
+<iframe id='file_upload' name="file_upload" style="width:1px;height:1px;border:0px" src="about:blank"></iframe>

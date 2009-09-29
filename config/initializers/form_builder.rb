@@ -1,0 +1,1 @@
+require "#{RAILS_ROOT}/lib/wysihat_engine"
