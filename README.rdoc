@@ -57,7 +57,7 @@ If you don't specify any buttons, wysihat-engine will use the whole list.
 
     <p>
       <%= f.label :content %><br />
-      <%= f.wysihat_editor :content, :buttons => [:bold, :italic, :underline ] %>
+      <%= f.wysihat_editor :content, :buttons => [:bold, :italic, :underline] %>
     </p>
     <p>
       <%= f.submit 'Create' %>
