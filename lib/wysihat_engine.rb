@@ -17,26 +17,23 @@ module ActionView
         
         buttons, helpers = '', ''
                 
-        if options['buttons']
-          options['buttons'].each do |b|
-            
-            case b.to_s.downcase
-            when "image"
-              buttons << "toolbar.addButton({label : \'Image\', handler: function(editor) { return editor.faceBoxFile(editor); } })\n"
-            when "link"
-              buttons << "toolbar.addButton({label : \'Link\', handler: function(editor) { return editor.promptLink(editor); } })\n"
-            when "html"
-              buttons << "toolbar.addButton({label : \'HTML\', handler: function(editor) { return editor.promptHTML(editor); } })\n"
-            else
-              buttons << "toolbar.addButton({label : \'#{b.to_s.split('_').map {|w| w.capitalize}.join}\'});\n"
-            end
-            
-          end
-        else
-          [:bold, :italic, :underline, :justify_left, :justify_center, :justify_right, :insert_ordered_list, :insert_unordered_list, :undo, :redo, :link, :html, :image].each do |b|
+        unless options['buttons']
+          options['buttons'] = [:bold, :italic, :underline, :justify_left, :justify_center, :justify_right, :insert_ordered_list, :insert_unordered_list, :undo, :redo, :link, :html, :image]
+        end
+        
+        options['buttons'].each do |b|
+          case b.to_s.downcase
+          when "image"
+            buttons << "toolbar.addButton({label : \'Image\', handler: function(editor) { return editor.faceBoxFile(editor); } })\n"
+          when "link"
+            buttons << "toolbar.addButton({label : \'Link\', handler: function(editor) { return editor.promptLink(editor); } })\n"
+          when "html"
+            buttons << "toolbar.addButton({label : \'HTML\', handler: function(editor) { return editor.promptHTML(editor); } })\n"
+          else
             buttons << "toolbar.addButton({label : \'#{b.to_s.split('_').map {|w| w.capitalize}.join}\'});\n"
           end
         end
+        
             
         content_tag(
           :script,
