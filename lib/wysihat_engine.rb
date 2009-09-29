@@ -38,6 +38,12 @@ module ActionView
         content_tag(
           :script,
           "
+          $$('form').first().onsubmit = function(){ 
+            $$('textarea.wysihat_editor').each(function(i){
+              $(i.id).value = ($(i.id + '_editor').contentWindow.document.body.innerHTML);
+            });
+          };
+          
           var WysihatHelper = {
             faceBoxFile: function()
             {
@@ -86,7 +92,8 @@ module ActionView
             #{buttons}
           });
           ",
-          :type => 'text/javascript') <<
+          :type => 'text/javascript'
+        ) <<
         content_tag("textarea", html_escape(options.delete('value') || value_before_type_cast(object)), options.merge(:class => 'wysihat_editor'))
       end
     end
