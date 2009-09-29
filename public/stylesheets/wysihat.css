@@ -58,6 +58,10 @@ div.editor_toolbar span{
   background-image: url('../images/image.png');
 }
 
+.editor_toolbar .paste {
+  background-image: url('../images/paste_plain.png');
+}
+
 .editor_toolbar .html {
   background-image: url('../images/page_code.png');
 }
