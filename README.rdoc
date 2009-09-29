@@ -27,8 +27,8 @@ If you want to use file uploading, you should also include the facebox javascrip
 
 We created a simple stylesheet, to use it include it too:
 
-<%= javascript_include_tag :defaults, 'wysihat', 'facebox' %>
-<%= stylesheet_link_tag 'facebox', 'wysihat' %>
+  <%= javascript_include_tag :defaults, 'wysihat', 'facebox' %>
+  <%= stylesheet_link_tag 'facebox', 'wysihat' %>
 
 == Examples
 
