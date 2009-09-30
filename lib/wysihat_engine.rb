@@ -76,7 +76,7 @@ module ActionView
                 facebox.loading();
                 new Effect.Appear($('facebox'), {duration: .3});
                 iframe = this
-                facebox.reveal('<input type=\"text\" id=\"link_field\" style=\"width:100%;\" value=\"http://www.google.com\"/>', null);         
+                facebox.reveal('<input type=\"text\" id=\"link_field\" style=\"width:100%;\"/>', null);         
                 Event.observe('link_field', 'change', function(event) {
                   iframe.linkSelection($('link_field').value);
                 });
