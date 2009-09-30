@@ -4,31 +4,7 @@ A simple Engine to get everyone up and running with Wysihat (http://github.com/j
 
 == Installation
 
-First, install the plugin
-
-  script/plugin install git://github.com/80beans/wysihat-engine.git
-  
-Then copy the required files to your app by running this rake task:
-  
-  rake wysihat_engine:sync
-
-And migrate your database
-  
-  rake db:migrate
-
-Don't forget to add the following line to your layouts file:
-  
-  <%= javascript_include_tag :defaults, 'wysihat' %>
-
-If you want to use file uploading, you should also include the facebox javascript file and the facebox css file:
-
-  <%= javascript_include_tag :defaults, 'wysihat', 'facebox' %>
-  <%= stylesheet_link_tag 'facebox' %>
-
-We created a simple stylesheet, to use it include it too:
-
-  <%= javascript_include_tag :defaults, 'wysihat', 'facebox' %>
-  <%= stylesheet_link_tag 'facebox', 'wysihat' %>
+[Check out Installation in the wiki](http://wiki.github.com/80beans/wysihat-engine/installation "WysiHat-Engine Installation") 
 
 == Examples
 
