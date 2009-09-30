@@ -8,6 +8,7 @@ module ActionView
     
     class InstanceTag #:nodoc:
       def to_wysihat_editor_tag(options = {})
+        
         options = DEFAULT_TEXT_AREA_OPTIONS.merge(options.stringify_keys)
         add_default_name_and_id(options)
 
@@ -35,6 +36,8 @@ module ActionView
             buttons << "toolbar.addButton({label : \'#{b.to_s.split('_').map {|w| w.capitalize}.join}\'});\n"
           end
         end
+        
+        options.delete('buttons');
         
         content_tag(
           :script,
