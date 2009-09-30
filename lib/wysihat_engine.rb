@@ -27,7 +27,7 @@ module ActionView
           when "image"
             buttons << "toolbar.addButton({label : \'Image\', handler: function(editor) { return editor.faceBoxFile(editor); } })\n"
           when "link"
-            buttons << "toolbar.addButton({label : \'Link\', handler: function(editor) { return editor.promptLink(editor); } })\n"
+            buttons << "toolbar.addButton({label : \'Link\', handler: function(editor) { return editor.faceboxLink(editor); } })\n"
           when "html"
             buttons << "toolbar.addButton({label : \'HTML\', handler: function(editor) { return editor.faceboxHTML(editor); } })\n"
           when "paste"
@@ -68,15 +68,18 @@ module ActionView
             	});
             },
             
-            promptLink: function()
+            faceboxLink: function()
             {
               if (this.linkSelected()) {
-                if (confirm('Remove link?'))
-                  this.unlinkSelection();
+                this.unlinkSelection();
               } else {
-                var value = prompt('Enter a URL', 'http://www.google.com/');
-                if (value)
-                  this.linkSelection(value);
+                facebox.loading();
+                new Effect.Appear($('facebox'), {duration: .3});
+                iframe = this
+                facebox.reveal('<input type=\"text\" id=\"link_field\" style=\"width:100%;\" value=\"http://www.google.com\"/>', null);         
+                Event.observe('link_field', 'change', function(event) {
+                  iframe.linkSelection($('link_field').value);
+                });
               }
             },
             
@@ -98,7 +101,7 @@ module ActionView
               iframe = this
               facebox.reveal('<textarea id=\"paste_editor\" style=\"width:100%; height:400px;\"></textarea>', null);         
               Event.observe('paste_editor', 'change', function(event) {
-              iframe.contentWindow.document.body.innerHTML = iframe.contentWindow.document.body.innerHTML + $('paste_editor').value.escapeHTML();
+                iframe.contentWindow.document.body.innerHTML = iframe.contentWindow.document.body.innerHTML + $('paste_editor').value.escapeHTML();
               });
             }
           }
