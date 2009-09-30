@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{wysihat-engine}
-  s.version = "0.1.0"
+  s.version = "0.0.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Jeff Kreeftmeijer"]
@@ -365,7 +365,8 @@ Gem::Specification.new do |s|
      "vendor/plugins/responds_to_parent/rails/init.rb",
      "vendor/plugins/responds_to_parent/responds-to-parent.gemspec",
      "vendor/plugins/responds_to_parent/test/assert_select_parent_test.rb",
-     "vendor/plugins/responds_to_parent/test/responds_to_parent_test.rb"
+     "vendor/plugins/responds_to_parent/test/responds_to_parent_test.rb",
+     "wysihat-engine.gemspec"
   ]
   s.homepage = %q{http://github.com/80beans/wysihat-engine}
   s.rdoc_options = ["--charset=UTF-8"]
