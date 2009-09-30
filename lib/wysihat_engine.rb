@@ -17,11 +17,12 @@ module ActionView
         end
         
         buttons, helpers = '', ''
-                
-        unless options['buttons']
+        
+        case options['buttons']
+        when nil, :all
           options['buttons'] = [:bold, :italic, :underline, :strikethrough, :justify_left, :justify_center, :justify_right, :insert_ordered_list, :insert_unordered_list, :undo, :redo, :link, :html, :paste, :image]
         end
-        
+                      
         options['buttons'].each do |b|
           case b.to_s.downcase
           when "image"
