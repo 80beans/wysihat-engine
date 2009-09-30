@@ -22,6 +22,10 @@ div.editor_toolbar span{
   background-image: url('../images/text_underline.png');
 }
 
+.editor_toolbar .strikethrough {
+  background-image: url('../images/text_strikethrough.png');
+}
+
 .editor_toolbar .justifyleft {
   background-image: url('../images/text_align_left.png');
 }

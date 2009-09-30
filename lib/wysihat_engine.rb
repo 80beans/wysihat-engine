@@ -19,7 +19,7 @@ module ActionView
         buttons, helpers = '', ''
                 
         unless options['buttons']
-          options['buttons'] = [:bold, :italic, :underline, :justify_left, :justify_center, :justify_right, :insert_ordered_list, :insert_unordered_list, :undo, :redo, :link, :html, :paste, :image]
+          options['buttons'] = [:bold, :italic, :underline, :strikethrough, :justify_left, :justify_center, :justify_right, :insert_ordered_list, :insert_unordered_list, :undo, :redo, :link, :html, :paste, :image]
         end
         
         options['buttons'].each do |b|
