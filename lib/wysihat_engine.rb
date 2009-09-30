@@ -1,11 +1,11 @@
 module ActionView
   module Helpers
-    class FormBuilder
-      def wysihat_editor(method, options = {})
-        InstanceTag.new(@object_name, method, self, options.delete(:object)).to_wysihat_editor_tag(options)
+    module FormHelper
+      def wysihat_editor(object_name, method, options = {})
+        InstanceTag.new(object_name, method, self, options.delete(:object)).to_wysihat_editor_tag(options)
       end
     end
-    
+  
     class InstanceTag #:nodoc:
       def to_wysihat_editor_tag(options = {})
         
@@ -114,6 +114,12 @@ module ActionView
           :type => 'text/javascript'
         ) <<
         content_tag("textarea", html_escape(options.delete('value') || value_before_type_cast(object)), options.merge(:class => 'wysihat_editor'))
+      end
+    end
+  
+    class FormBuilder #:nodoc:
+      def wysihat_editor(method)
+        @template.wysihat_editor(@object_name, method)
       end
     end
   end
