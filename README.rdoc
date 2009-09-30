@@ -8,57 +8,12 @@ http://wiki.github.com/80beans/wysihat-engine/installation
 
 == Examples
 
-Now you can use the wysihat_editor form field in your app, like this:
-
-  <% form_for(@page) do |f| %>
-    <%= f.error_messages %>
-
-    <p>
-      <%= f.label :content %><br />
-      <%= f.wysihat_editor :content %>
-    </p>
-    <p>
-      <%= f.submit 'Create' %>
-    </p>
-  <% end %>
-
-You'll probably want to specify which fields end up in your editor. Just add a :buttons => [] option to the wysihat_editor.
-
-Some buttons you can add are: :bold, :italic, :underline, :justify_left, :justify_center, :justify_right, :insert_ordered_list, :insert_unordered_list, :undo, :redo, :link, :html and :image. You can check out wysihat (http://github.com/josh/wysihat) to find more options.
-
-If you don't specify any buttons, wysihat-engine will use the whole list.
-  
-  <% form_for(@page) do |f| %>
-    <%= f.error_messages %>
-
-    <p>
-      <%= f.label :content %><br />
-      <%= f.wysihat_editor :content, :buttons => [:bold, :italic, :underline] %>
-    </p>
-    <p>
-      <%= f.submit 'Create' %>
-    </p>
-  <% end %>
-  
-The wysihat-engine even has image uploads baked in! It's very simple, just add :image to your buttons array.
-
-  <% form_for(@page) do |f| %>
-    <%= f.error_messages %>
-
-    <p>
-      <%= f.label :content %><br />
-      <%= f.wysihat_editor :content, :buttons => [:image] %>
-    </p>
-    <p>
-      <%= f.submit 'Create' %>
-    </p>
-  <% end %>
+http://wiki.github.com/80beans/wysihat-engine/installation
 
 == Contributing
 
-Want to help? Great. Please fork the project and send a pull request when you're done! :)
-
-Stay tuned, we'll be adding some great stuff soon!
+Found an issue? Have a great idea? Want to help? Great!
+Issue reports and pull requests are always welcome. :)
 
 == License
 
