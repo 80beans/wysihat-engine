@@ -42,12 +42,6 @@ module ActionView
         content_tag(
           :script,
           "
-          $$('form').first().onsubmit = function(){ 
-            $$('textarea.wysihat_editor').each(function(i){
-              $(i.id).value = ($(i.id + '_editor').contentWindow.document.body.innerHTML);
-            });
-          };
-          
           var WysihatHelper = {
             faceBoxFile: function()
             {
@@ -112,6 +106,11 @@ module ActionView
             var editor = WysiHat.Editor.attach('#{tag_id}');
             var toolbar = new WysiHat.Toolbar(editor);
             #{buttons}
+            
+            $$('form').first().onsubmit = function(){ 
+              editor.save();
+            };
+            
           });
           ",
           :type => 'text/javascript'
