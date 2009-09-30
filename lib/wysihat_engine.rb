@@ -121,7 +121,7 @@ module ActionView
   
     class FormBuilder #:nodoc:
       def wysihat_editor(method, options = {})
-        @template.wysihat_editor(@object_name, method)
+        @template.wysihat_editor(@object_name, method, options)
       end
     end
   end
