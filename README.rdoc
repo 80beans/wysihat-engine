@@ -4,7 +4,7 @@ A simple Engine to get everyone up and running with Wysihat (http://github.com/j
 
 == Installation
 
-[Check out Installation in the wiki](http://wiki.github.com/80beans/wysihat-engine/installation "WysiHat-Engine Installation") 
+http://wiki.github.com/80beans/wysihat-engine/installation
 
 == Examples
 
