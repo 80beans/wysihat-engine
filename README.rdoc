@@ -8,7 +8,7 @@ http://wiki.github.com/80beans/wysihat-engine/installation
 
 == Examples
 
-http://wiki.github.com/80beans/wysihat-engine/installation
+http://wiki.github.com/80beans/wysihat-engine/examples
 
 == Contributing
 
