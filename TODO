@@ -1,0 +1,3 @@
+* get it working as a plugin again ( some problem with ResourceController )
+* remove ResourceController, it's useless and confusing
+* rewrite the :paste button to use josh's solution ( http://www.80beans.com/2009/10/01/wysihat-engine/comment-page-1/#comment-1834 )

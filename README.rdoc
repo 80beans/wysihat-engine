@@ -1,6 +1,6 @@
 = WysihatEngine
 
-A simple Engine to get everyone up and running with Wysihat (http://github.com/josh/wysihat) fast.
+A simple Engine to get everyone up and running with Wysihat ( http://github.com/josh/wysihat ) fast.
 
 == Installation
 

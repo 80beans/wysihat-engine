@@ -1,0 +1,5 @@
+0.1.0 (October 3rd, 2009) - Jeff Kreeftmeijer
+
+* Made it a gem.
+* Created a generator to get rid of the ugly rake task.
+* Removed lots of files (like /public and /config). Everything is in a generator template now.
