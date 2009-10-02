@@ -17,9 +17,11 @@ Gem::Specification.new do |s|
   ]
   s.files = [
     ".gitignore",
+     "CHANGELOG",
      "MIT-LICENSE",
      "README.rdoc",
      "Rakefile",
+     "TODO",
      "VERSION",
      "app/controllers/wysihat_files_controller.rb",
      "app/helpers/wysihat_files_helper.rb",
