@@ -29,7 +29,7 @@ begin
     gem.summary = "A rails engine to allow users to use the WysiHat editors."
     gem.description = "A rails engine to allow users to use the WysiHat editors."
     gem.email = "jeff@80beans.com"
-    gem.homepage = "http://github.com/80beans/wysihat-engine"
+    gem.homepage = "http://www.80beans.com/2009/10/01/wysihat-engine/"
     gem.authors = ["Jeff Kreeftmeijer"] 
     gem.add_dependency('thoughtbot-paperclip')
     gem.add_dependency('giraffesoft-resource_controller')
