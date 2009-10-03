@@ -3,6 +3,7 @@ class WysihatGenerator < Rails::Generator::Base
     record do |m|
       
       m.file 'javascripts/wysihat.js',        'public/javascripts/wysihat.js'
+      m.file 'javascripts/wysihat_engine.js', 'public/javascripts/wysihat_engine.js'
       m.file 'javascripts/facebox.js',        'public/javascripts/facebox.js'
       
       m.file 'stylesheets/wysihat.css',       'public/stylesheets/wysihat.css'
