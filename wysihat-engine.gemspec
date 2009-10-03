@@ -65,19 +65,9 @@ Gem::Specification.new do |s|
      "generators/wysihat/templates/stylesheets/wysihat.css",
      "generators/wysihat/wysihat_generator.rb",
      "lib/wysihat-engine.rb",
-     "vendor/plugins/responds_to_parent/MIT-LICENSE",
-     "vendor/plugins/responds_to_parent/README",
-     "vendor/plugins/responds_to_parent/Rakefile",
-     "vendor/plugins/responds_to_parent/init.rb",
-     "vendor/plugins/responds_to_parent/lib/parent_selector_assertion.rb",
-     "vendor/plugins/responds_to_parent/lib/responds_to_parent.rb",
-     "vendor/plugins/responds_to_parent/rails/init.rb",
-     "vendor/plugins/responds_to_parent/responds-to-parent.gemspec",
-     "vendor/plugins/responds_to_parent/test/assert_select_parent_test.rb",
-     "vendor/plugins/responds_to_parent/test/responds_to_parent_test.rb",
      "wysihat-engine.gemspec"
   ]
-  s.homepage = %q{http://github.com/80beans/wysihat-engine}
+  s.homepage = %q{http://www.80beans.com/2009/10/01/wysihat-engine/}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.5}
