@@ -1,4 +1,3 @@
-require 'resource_controller'
 require 'paperclip'
 
 module ActionView

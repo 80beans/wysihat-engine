@@ -32,7 +32,6 @@ begin
     gem.homepage = "http://www.80beans.com/2009/10/01/wysihat-engine/"
     gem.authors = ["Jeff Kreeftmeijer"] 
     gem.add_dependency('thoughtbot-paperclip')
-    gem.add_dependency('giraffesoft-resource_controller')
   end
 rescue LoadError
   puts "Jeweler not available. Install it with: sudo gem install technicalpickles-jeweler -s http://gems.github.com"
