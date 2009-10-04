@@ -1,3 +1,11 @@
+0.1.2 (October 4th, 2009) - Jeff Kreeftmeijer
+
+* added a --no-stylesheet option to the generator
+
+0.1.1 (October 3rd, 2009) - Jeff Kreeftmeijer
+
+* Moved most of the javascript to the javascript folder (javascripts/wysihat_engine.js) instead of doing it inline.
+
 0.1.0 (October 3rd, 2009) - Jeff Kreeftmeijer
 
 * Made it a gem.
