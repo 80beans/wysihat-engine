@@ -1,15 +1,21 @@
 class WysihatGenerator < Rails::Generator::Base
-  default_options :stylesheet => true
+  default_options :stylesheet => true, :javascript_source => false
     
   def manifest
-    record do |m|
-      m.file 'javascripts/wysihat.js',        'public/javascripts/wysihat.js'
-      m.file 'javascripts/wysihat_engine.js', 'public/javascripts/wysihat_engine.js'
+    record do |m|                                                            
+      
+      m.file 'javascripts/wysihat_engine_pack.js', 'public/javascripts/wysihat_engine_pack.js'
+      
+      if options[:js_src]
+        m.file 'javascripts/facebox.js',        'public/javascripts/facebox.js'
+        m.file 'javascripts/wysihat.js',        'public/javascripts/wysihat.js'
+        m.file 'javascripts/wysihat_engine.js', 'public/javascripts/wysihat_engine.js'
+      end
 
       # facebox
       
       m.file 'stylesheets/facebox.css',       'public/stylesheets/facebox.css'
-      m.file 'javascripts/facebox.js',        'public/javascripts/facebox.js'
+      
       m.file 'images/b.png',                  'public/images/b.png'      
       m.file 'images/bl.png',                 'public/images/bl.png'      
       m.file 'images/br.png',                 'public/images/br.png'      
@@ -60,7 +66,8 @@ class WysihatGenerator < Rails::Generator::Base
   def add_options!(opt)
     opt.separator ''
     opt.separator 'Options:'
-    opt.on("--no-stylesheet", "Don't add the stylesheet file and don't copy the included icons.") { |v| options[:stylesheet] = false }
+    opt.on("--no-stylesheet",             "Don't add the stylesheet file and don't copy the included icons.") { |v| options[:stylesheet] = false }
+    opt.on("--include-js-src", "Also copy the javascript source files") { |v| options[:js_src] = true }
   end
     
 end

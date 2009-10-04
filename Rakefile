@@ -22,6 +22,26 @@ Rake::RDocTask.new(:rdoc) do |rdoc|
   rdoc.rdoc_files.include('lib/**/*.rb')
 end
 
+desc 'minify and concatenate the javascript files to make a pack'
+task :minify do
+  require "yui/compressor"
+
+  compressor = YUI::JavaScriptCompressor.new(:munge => true)
+  dir = 'generators/wysihat/templates/javascripts'
+  pack = File.new("#{dir}/wysihat_engine_pack.js", "w")
+
+  string = ''
+  files = ['facebox', 'wysihat', 'wysihat_engine']
+  files.each do |file|
+    file = open("#{dir}/#{file}.js")
+    string << file.read
+    file.close
+  end
+
+  pack.write(compressor.compress(string))
+  pack.close
+end  
+
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|

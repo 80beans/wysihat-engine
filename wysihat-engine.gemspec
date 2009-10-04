@@ -61,6 +61,7 @@ Gem::Specification.new do |s|
      "generators/wysihat/templates/javascripts/facebox.js",
      "generators/wysihat/templates/javascripts/wysihat.js",
      "generators/wysihat/templates/javascripts/wysihat_engine.js",
+     "generators/wysihat/templates/javascripts/wysihat_engine_pack.js",
      "generators/wysihat/templates/migrations/create_wysihat_files.rb",
      "generators/wysihat/templates/stylesheets/facebox.css",
      "generators/wysihat/templates/stylesheets/wysihat.css",

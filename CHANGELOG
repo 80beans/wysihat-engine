@@ -2,7 +2,8 @@
 
 * added a --no-stylesheet option to the generator
 * removed ResourceController as a dependency. Normal controller now :)
-* moved more javascript to wysihat_engine.js.
+* moved more javascript to wysihat_engine.js
+* added wysihat_engine_pack.js (all javascripts minfied & concatenated)
 
 0.1.1 (October 3rd, 2009) - Jeff Kreeftmeijer
 
