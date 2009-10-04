@@ -1,6 +1,8 @@
 0.1.2 (October 4th, 2009) - Jeff Kreeftmeijer
 
 * added a --no-stylesheet option to the generator
+* removed ResourceController as a dependency. Normal controller now :)
+* moved more javascript to wysihat_engine.js.
 
 0.1.1 (October 3rd, 2009) - Jeff Kreeftmeijer
 

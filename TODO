@@ -3,4 +3,3 @@
 
 * add sass versions of the stylesheets (and give an option to use those in the generator)
 * add a minified and concatenated version of the javascript files (and give an option to use it in the generator)
-* move more logic from the formbuilder to wysihat_engine.js

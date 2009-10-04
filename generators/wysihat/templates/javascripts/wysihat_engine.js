@@ -1,7 +1,7 @@
 var toolbars = [];
 
 var WysihatHelper = {
-  faceBoxFile: function()
+  faceboxFile: function()
   {
     facebox.loading();
     new Effect.Appear($('facebox'), {duration: .3});
@@ -71,3 +71,27 @@ Event.observe(window, 'load', function() {
     editor.save();
   };
 });
+
+function addButtons(tag_id, buttons){
+	Event.observe(window, 'load', function() {
+		buttons.each(function(button){
+			
+			switch(button.toLowerCase()){
+				case 'image':
+					toolbars[tag_id].addButton({label : button.gsub('_','-').camelize().capitalize(), handler: function(editor) { return editor.faceboxFile(editor); }}); 
+				break;
+				case 'link':
+					toolbars[tag_id].addButton({label : button.gsub('_','-').camelize().capitalize(), handler: function(editor) { return editor.faceboxLink(editor); }}); 
+				break;
+				case 'html':
+					toolbars[tag_id].addButton({label : button.gsub('_','-').camelize().capitalize(), handler: function(editor) { return editor.faceboxHTML(editor); }}); 
+				break;
+				case 'paste':
+					toolbars[tag_id].addButton({label : button.gsub('_','-').camelize().capitalize(), handler: function(editor) { return editor.faceboxPaste(editor); }}); 
+				break;
+				default:
+					toolbars[tag_id].addButton({label : button.gsub('_','-').camelize().capitalize()});
+			}
+		})                                        
+	})
+}
