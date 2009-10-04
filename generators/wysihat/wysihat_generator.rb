@@ -1,5 +1,5 @@
 class WysihatGenerator < Rails::Generator::Base
-  default_options :stylesheet => true, :javascript_source => false
+  default_options :stylesheet => true, :js_src => false
     
   def manifest
     record do |m|                                                            
