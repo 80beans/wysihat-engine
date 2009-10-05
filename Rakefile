@@ -37,7 +37,7 @@ task :minify do
     string << file.read
     file.close
   end
-
+  
   pack.write(compressor.compress(string))
   pack.close
 end  

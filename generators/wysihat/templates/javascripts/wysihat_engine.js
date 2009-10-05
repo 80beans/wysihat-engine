@@ -54,19 +54,19 @@ Event.observe(window, 'load', function() {
     var editor = WysiHat.Editor.attach(i.id);
     var toolbar = new WysiHat.Toolbar(editor);
 		toolbars[i.id] = toolbar;
-  });
-  
-  editor.outputFilter = function(text) {
-    return text.formatHTMLOutput().sanitize({
-      tags: ['span', 'p', 'br', 'strong', 'em', 'a'],
-      attributes: ['id', 'href']
+		
+		editor.outputFilter = function(text) {
+      return text.formatHTMLOutput().sanitize({
+        tags: ['span', 'p', 'br', 'strong', 'em', 'a'],
+        attributes: ['id', 'href']
+      });
+    };
+
+    editor.observe("wysihat:paste", function(event) {
+      setTimeout(function() {
+        event.target.reload();
+      }, 1);
     });
-  };
-  
-  editor.observe("wysihat:paste", function(event) {
-    setTimeout(function() {
-      event.target.reload();
-    }, 1);
   });
   
   $$('form').each().onsubmit = function(){ 
