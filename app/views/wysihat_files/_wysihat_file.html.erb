@@ -1,4 +1,4 @@
 <li id="wysihat_file_<%= wysihat_file.id %>">
   <%= link_to_function(wysihat_file.file_file_name, "$$('iframe##{params[:editor]}')[0].insertImage(this.href); facebox.close();", :href => wysihat_file.file.url) %>
-  <%= link_to_remote 'delete', :url => wysihat_file, :method => :delete, :confirm => 'Are you sure you want to delete this file?'%>
+  <%= link_to_remote t('wysihat_files.destroy.name'), :url => wysihat_file, :method => :delete, :confirm => t('wysihat_files.destroy.sure') %>
 </li>
