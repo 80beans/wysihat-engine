@@ -1,4 +1,2 @@
 * add a destroy action to the WysihatFilesController
 * rewrite the :paste button to use josh's solution ( http://www.80beans.com/2009/10/01/wysihat-engine/comment-page-1/#comment-1834 )
-
-* add sass versions of the stylesheets (and give an option to use those in the generator)
