@@ -46,7 +46,6 @@ class WysihatGenerator < Rails::Generator::Base
         m.file 'images/loading.gif',            'public/images/loading.gif'      
         m.file 'images/page_code.png',          'public/images/page_code.png'      
         m.file 'images/page_white_flash.png',   'public/images/page_white_flash.png'      
-        m.file 'images/paste_plain.png',        'public/images/paste_plain.png'      
         m.file 'images/text_align_center.png',  'public/images/text_align_center.png'      
         m.file 'images/text_align_left.png',    'public/images/text_align_left.png'      
         m.file 'images/text_align_right.png',   'public/images/text_align_right.png'      
