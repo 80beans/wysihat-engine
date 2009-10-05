@@ -30,6 +30,8 @@ Gem::Specification.new do |s|
      "app/views/wysihat_files/_wysihat_file.html.erb",
      "app/views/wysihat_files/index.html.erb",
      "app/views/wysihat_files/new.html.erb",
+     "generators/wysihat/templates/css/.sass-cache/242b5853f919a8e6346032f619374fe0847bac7b/facebox.cssc",
+     "generators/wysihat/templates/css/.sass-cache/242b5853f919a8e6346032f619374fe0847bac7b/wysihat.cssc",
      "generators/wysihat/templates/css/facebox.css",
      "generators/wysihat/templates/css/wysihat.css",
      "generators/wysihat/templates/images/arrow_redo.png",
@@ -65,6 +67,8 @@ Gem::Specification.new do |s|
      "generators/wysihat/templates/javascripts/wysihat_engine.js",
      "generators/wysihat/templates/javascripts/wysihat_engine_pack.js",
      "generators/wysihat/templates/migrations/create_wysihat_files.rb",
+     "generators/wysihat/templates/sass/facebox.sass",
+     "generators/wysihat/templates/sass/wysihat.sass",
      "generators/wysihat/wysihat_generator.rb",
      "lib/wysihat-engine.rb",
      "wysihat-engine.gemspec"

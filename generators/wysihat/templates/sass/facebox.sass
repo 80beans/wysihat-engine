@@ -1,0 +1,77 @@
+#facebox
+  position: absolute
+  top: 0
+  left: 0
+  z-index: 100
+  text-align: left
+
+  .b
+    background: url(../images/b.png)
+
+  .tl
+    background: url(../images/tl.png)
+
+  .tr
+    background: url(../images/tr.png)
+
+  .bl
+    background: url(../images/bl.png)
+
+  .br
+    background: url(../images/br.png)
+
+  .popup
+    position: relative
+
+  table
+    border-collapse: collapse
+
+  td
+    border-bottom: 0
+    padding: 0
+
+  .body
+    padding: 10px
+    background: #fff
+    width: 370px
+
+  .loading, .image
+    text-align: center
+
+  img
+    border: 0
+    margin: 0
+
+  .footer
+    border-top: 1px solid #DDDDDD
+    padding-top: 5px
+    margin-top: 10px
+    text-align: right
+
+  .tl, .tr, .bl, .br
+    height: 10px
+    width: 10px
+    overflow: hidden
+    padding: 0
+
+
+#facebox_overlay
+  position: fixed
+  top: 0px
+  left: 0px
+  height: 100%
+  width: 100%
+
+
+.facebox_hide
+  z-index: -100
+
+
+.facebox_overlayBG
+  background-color: #000
+  z-index: 99
+
+
+* html #facebox_overlay
+  position: absolute
+  height: expression(document.body.scrollHeight > document.body.offsetHeight ? document.body.scrollHeight : document.body.offsetHeight + 'px')

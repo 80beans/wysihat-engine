@@ -1,5 +1,5 @@
 class WysihatGenerator < Rails::Generator::Base
-  default_options :stylesheet => true, :js_src => false
+  default_options :stylesheet => true, :js_src => false, :sass => false
     
   def manifest
     record do |m|                                                            
@@ -14,7 +14,12 @@ class WysihatGenerator < Rails::Generator::Base
 
       # facebox
       
-      m.file 'css/facebox.css',       'public/stylesheets/facebox.css'
+      if options[:sass]
+        m.directory 'public/stylesheets/sass'
+        m.file 'sass/facebox.sass', 'public/stylesheets/sass/facebox.sass'
+      else
+        m.file 'css/facebox.css',   'public/stylesheets/facebox.css'
+      end
       
       m.file 'images/b.png',                  'public/images/b.png'      
       m.file 'images/bl.png',                 'public/images/bl.png'      
@@ -25,8 +30,12 @@ class WysihatGenerator < Rails::Generator::Base
       
       # stylesheet & icons
       
-      if options[:stylesheet]                           
-        m.file 'css/wysihat.css',       'public/stylesheets/wysihat.css'
+      if options[:stylesheet]
+        if options[:sass]                        
+          m.file 'sass/wysihat.sass', 'public/stylesheets/sass/wysihat.sass'
+        else
+          m.file 'css/wysihat.css',   'public/stylesheets/wysihat.css'
+        end
         
         m.file 'images/arrow_redo.png',         'public/images/arrow_redo.png'      
         m.file 'images/arrow_undo.png',         'public/images/arrow_undo.png'      
@@ -66,9 +75,9 @@ class WysihatGenerator < Rails::Generator::Base
   def add_options!(opt)
     opt.separator ''
     opt.separator 'Options:'
-    opt.on("--no-stylesheet",   "Don't add the stylesheet file and don't copy the included icons.") { |v| options[:stylesheet] = false }
-    opt.on("--include-js-src",  "Also copy the javascript source files.")                           { |v| options[:js_src] = true }
-    #opt.on("--sass",            'Copy sass stylesheets instead of css.')                            { |v| options[:sass] = true }
+    opt.on('--no-stylesheet',   'Don\'t add the stylesheet file and don\'t copy the included icons.') { |v| options[:stylesheet] = false }
+    opt.on('--include-js-src',  'Also copy the javascript source files.')                             { |v| options[:js_src] = true }
+    opt.on('--sass',            'Copy sass stylesheets instead of css.')                              { |v| options[:sass] = true }
   end
     
 end
