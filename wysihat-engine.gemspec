@@ -30,6 +30,7 @@ Gem::Specification.new do |s|
      "app/views/wysihat_files/_wysihat_file.html.erb",
      "app/views/wysihat_files/index.html.erb",
      "app/views/wysihat_files/new.html.erb",
+     "config/locales/en.yml",
      "generators/wysihat/templates/css/.sass-cache/242b5853f919a8e6346032f619374fe0847bac7b/facebox.cssc",
      "generators/wysihat/templates/css/.sass-cache/242b5853f919a8e6346032f619374fe0847bac7b/wysihat.cssc",
      "generators/wysihat/templates/css/facebox.css",
@@ -47,7 +48,6 @@ Gem::Specification.new do |s|
      "generators/wysihat/templates/images/loading.gif",
      "generators/wysihat/templates/images/page_code.png",
      "generators/wysihat/templates/images/page_white_flash.png",
-     "generators/wysihat/templates/images/paste_plain.png",
      "generators/wysihat/templates/images/text_align_center.png",
      "generators/wysihat/templates/images/text_align_left.png",
      "generators/wysihat/templates/images/text_align_right.png",
@@ -84,11 +84,14 @@ Gem::Specification.new do |s|
     s.specification_version = 3
 
     if Gem::Version.new(Gem::RubyGemsVersion) >= Gem::Version.new('1.2.0') then
+      s.add_development_dependency(%q<yui-compressor>, [">= 0"])
       s.add_runtime_dependency(%q<thoughtbot-paperclip>, [">= 0"])
     else
+      s.add_dependency(%q<yui-compressor>, [">= 0"])
       s.add_dependency(%q<thoughtbot-paperclip>, [">= 0"])
     end
   else
+    s.add_dependency(%q<yui-compressor>, [">= 0"])
     s.add_dependency(%q<thoughtbot-paperclip>, [">= 0"])
   end
 end

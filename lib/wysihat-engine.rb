@@ -22,7 +22,7 @@ module ActionView
         
         case options['buttons']
         when nil, :all
-          options['buttons'] = [:bold, :italic, :underline, :strikethrough, :justify_left, :justify_center, :justify_right, :insert_ordered_list, :insert_unordered_list, :undo, :redo, :link, :html, :paste, :image]
+          options['buttons'] = [:bold, :italic, :underline, :strikethrough, :justify_left, :justify_center, :justify_right, :insert_ordered_list, :insert_unordered_list, :undo, :redo, :link, :html, :image]
         end
  
         content_tag(

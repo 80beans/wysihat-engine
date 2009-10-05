@@ -14,4 +14,16 @@ class WysihatFilesController < ApplicationController
       end      
     end
   end
+  
+  def destroy
+    @wysihat_file = WysihatFile.find(params[:id])
+    respond_to do |wants|
+      wants.js {
+        render :update do |page|
+          page.remove "wysihat_file_#{@wysihat_file.id}"
+        end
+      }
+    end
+    @wysihat_file.destroy
+  end
 end

@@ -50,7 +50,8 @@ begin
     gem.description = "A rails engine to allow users to use the WysiHat editors."
     gem.email = "jeff@80beans.com"
     gem.homepage = "http://www.80beans.com/2009/10/01/wysihat-engine/"
-    gem.authors = ["Jeff Kreeftmeijer"] 
+    gem.authors = ["Jeff Kreeftmeijer"]
+    gem.add_development_dependency "yui-compressor"
     gem.add_dependency('thoughtbot-paperclip')
   end
 rescue LoadError
