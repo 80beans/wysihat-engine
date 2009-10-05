@@ -47,7 +47,6 @@ Gem::Specification.new do |s|
      "generators/wysihat/templates/images/loading.gif",
      "generators/wysihat/templates/images/page_code.png",
      "generators/wysihat/templates/images/page_white_flash.png",
-     "generators/wysihat/templates/images/paste_plain.png",
      "generators/wysihat/templates/images/text_align_center.png",
      "generators/wysihat/templates/images/text_align_left.png",
      "generators/wysihat/templates/images/text_align_right.png",
@@ -84,11 +83,14 @@ Gem::Specification.new do |s|
     s.specification_version = 3
 
     if Gem::Version.new(Gem::RubyGemsVersion) >= Gem::Version.new('1.2.0') then
+      s.add_development_dependency(%q<yui-compressor>, [">= 0"])
       s.add_runtime_dependency(%q<thoughtbot-paperclip>, [">= 0"])
     else
+      s.add_dependency(%q<yui-compressor>, [">= 0"])
       s.add_dependency(%q<thoughtbot-paperclip>, [">= 0"])
     end
   else
+    s.add_dependency(%q<yui-compressor>, [">= 0"])
     s.add_dependency(%q<thoughtbot-paperclip>, [">= 0"])
   end
 end

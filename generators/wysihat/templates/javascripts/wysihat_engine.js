@@ -45,17 +45,6 @@ var WysihatHelper = {
       iframe.contentWindow.document.body.innerHTML = $('html_editor').value;
     });
   },
-  
-  faceboxPaste: function()
-  {
-    facebox.loading();
-    new Effect.Appear($('facebox'), {duration: .3});
-    iframe = this
-    facebox.reveal('<textarea id=\"paste_editor\" style=\"width:100%; height:400px;\"></textarea>', null);         
-    Event.observe('paste_editor', 'change', function(event) {
-      iframe.contentWindow.document.body.innerHTML = iframe.contentWindow.document.body.innerHTML + $('paste_editor').value.escapeHTML();
-    });
-  }
 }
 
 WysiHat.Editor.include(WysihatHelper);
@@ -66,7 +55,20 @@ Event.observe(window, 'load', function() {
     var toolbar = new WysiHat.Toolbar(editor);
 		toolbars[i.id] = toolbar;
   });
- 	  
+  
+  editor.outputFilter = function(text) {
+    return text.formatHTMLOutput().sanitize({
+      tags: ['span', 'p', 'br', 'strong', 'em', 'a'],
+      attributes: ['id', 'href']
+    });
+  };
+  
+  editor.observe("wysihat:paste", function(event) {
+    setTimeout(function() {
+      event.target.reload();
+    }, 1);
+  });
+  
   $$('form').each().onsubmit = function(){ 
     editor.save();
   };
