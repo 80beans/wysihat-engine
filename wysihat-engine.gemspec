@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Jeff Kreeftmeijer"]
-  s.date = %q{2009-10-04}
+  s.date = %q{2009-10-05}
   s.description = %q{A rails engine to allow users to use the WysiHat editors.}
   s.email = %q{jeff@80beans.com}
   s.extra_rdoc_files = [
@@ -30,6 +30,8 @@ Gem::Specification.new do |s|
      "app/views/wysihat_files/_wysihat_file.html.erb",
      "app/views/wysihat_files/index.html.erb",
      "app/views/wysihat_files/new.html.erb",
+     "generators/wysihat/templates/css/facebox.css",
+     "generators/wysihat/templates/css/wysihat.css",
      "generators/wysihat/templates/images/arrow_redo.png",
      "generators/wysihat/templates/images/arrow_undo.png",
      "generators/wysihat/templates/images/b.png",
@@ -63,8 +65,6 @@ Gem::Specification.new do |s|
      "generators/wysihat/templates/javascripts/wysihat_engine.js",
      "generators/wysihat/templates/javascripts/wysihat_engine_pack.js",
      "generators/wysihat/templates/migrations/create_wysihat_files.rb",
-     "generators/wysihat/templates/stylesheets/facebox.css",
-     "generators/wysihat/templates/stylesheets/wysihat.css",
      "generators/wysihat/wysihat_generator.rb",
      "lib/wysihat-engine.rb",
      "wysihat-engine.gemspec"

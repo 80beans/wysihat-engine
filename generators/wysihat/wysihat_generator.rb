@@ -14,7 +14,7 @@ class WysihatGenerator < Rails::Generator::Base
 
       # facebox
       
-      m.file 'stylesheets/facebox.css',       'public/stylesheets/facebox.css'
+      m.file 'css/facebox.css',       'public/stylesheets/facebox.css'
       
       m.file 'images/b.png',                  'public/images/b.png'      
       m.file 'images/bl.png',                 'public/images/bl.png'      
@@ -26,7 +26,7 @@ class WysihatGenerator < Rails::Generator::Base
       # stylesheet & icons
       
       if options[:stylesheet]                           
-        m.file 'stylesheets/wysihat.css',       'public/stylesheets/wysihat.css'
+        m.file 'css/wysihat.css',       'public/stylesheets/wysihat.css'
         
         m.file 'images/arrow_redo.png',         'public/images/arrow_redo.png'      
         m.file 'images/arrow_undo.png',         'public/images/arrow_undo.png'      
@@ -66,8 +66,9 @@ class WysihatGenerator < Rails::Generator::Base
   def add_options!(opt)
     opt.separator ''
     opt.separator 'Options:'
-    opt.on("--no-stylesheet",             "Don't add the stylesheet file and don't copy the included icons.") { |v| options[:stylesheet] = false }
-    opt.on("--include-js-src", "Also copy the javascript source files") { |v| options[:js_src] = true }
+    opt.on("--no-stylesheet",   "Don't add the stylesheet file and don't copy the included icons.") { |v| options[:stylesheet] = false }
+    opt.on("--include-js-src",  "Also copy the javascript source files.")                           { |v| options[:js_src] = true }
+    #opt.on("--sass",            'Copy sass stylesheets instead of css.')                            { |v| options[:sass] = true }
   end
     
 end
