@@ -50,7 +50,7 @@ var WysihatHelper = {
 WysiHat.Editor.include(WysihatHelper);
 
 Event.observe(window, 'load', function() {
-	$$('textarea').each(function(i){   
+	$$('textarea.wysihat_editor').each(function(i){   
     var editor = WysiHat.Editor.attach(i.id);
     var toolbar = new WysiHat.Toolbar(editor);
 		toolbars[i.id] = toolbar;
