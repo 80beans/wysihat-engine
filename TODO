@@ -1,1 +1,3 @@
+* add a config.yml file and put some of the settings in there
 * put the facebox images & icons in a subdir
+* put version numbers in the dependencies
