@@ -9,17 +9,17 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Jeff Kreeftmeijer"]
-  s.date = %q{2009-10-11}
-  s.description = %q{A rails engine to allow users to use the WysiHat editors.}
+  s.date = %q{2009-10-12}
+  s.description = %q{A Rails engine to help integrate the 37signals WyshiHat rich text editor to your application.}
   s.email = %q{jeff@80beans.com}
   s.extra_rdoc_files = [
-    "README.rdoc"
+    "README.textile"
   ]
   s.files = [
     ".gitignore",
      "CHANGELOG",
      "MIT-LICENSE",
-     "README.rdoc",
+     "README.textile",
      "Rakefile",
      "TODO",
      "VERSION",
@@ -77,21 +77,21 @@ Gem::Specification.new do |s|
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.5}
-  s.summary = %q{A rails engine to allow users to use the WysiHat editors.}
+  s.summary = %q{A Rails engine to help integrate the 37signals WyshiHat rich text editor to your application.}
 
   if s.respond_to? :specification_version then
     current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
     s.specification_version = 3
 
     if Gem::Version.new(Gem::RubyGemsVersion) >= Gem::Version.new('1.2.0') then
-      s.add_development_dependency(%q<yui-compressor>, [">= 0"])
-      s.add_runtime_dependency(%q<thoughtbot-paperclip>, [">= 0"])
+      s.add_development_dependency(%q<yui-compressor>, [">= 0.9.1"])
+      s.add_runtime_dependency(%q<thoughtbot-paperclip>, [">= 2.3.1"])
     else
-      s.add_dependency(%q<yui-compressor>, [">= 0"])
-      s.add_dependency(%q<thoughtbot-paperclip>, [">= 0"])
+      s.add_dependency(%q<yui-compressor>, [">= 0.9.1"])
+      s.add_dependency(%q<thoughtbot-paperclip>, [">= 2.3.1"])
     end
   else
-    s.add_dependency(%q<yui-compressor>, [">= 0"])
-    s.add_dependency(%q<thoughtbot-paperclip>, [">= 0"])
+    s.add_dependency(%q<yui-compressor>, [">= 0.9.1"])
+    s.add_dependency(%q<thoughtbot-paperclip>, [">= 2.3.1"])
   end
 end

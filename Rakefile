@@ -46,13 +46,13 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "wysihat-engine"
-    gem.summary = "A rails engine to allow users to use the WysiHat editors."
-    gem.description = "A rails engine to allow users to use the WysiHat editors."
+    gem.summary = "A Rails engine to help integrate the 37signals WyshiHat rich text editor to your application."
+    gem.description = "A Rails engine to help integrate the 37signals WyshiHat rich text editor to your application."
     gem.email = "jeff@80beans.com"
     gem.homepage = "http://www.80beans.com/2009/10/01/wysihat-engine/"
     gem.authors = ["Jeff Kreeftmeijer"]
-    gem.add_development_dependency "yui-compressor"
-    gem.add_dependency('thoughtbot-paperclip')
+    gem.add_development_dependency "yui-compressor", ">= 0.9.1"
+    gem.add_dependency 'thoughtbot-paperclip', ">= 2.3.1"
   end
 rescue LoadError
   puts "Jeweler not available. Install it with: sudo gem install technicalpickles-jeweler -s http://gems.github.com"
