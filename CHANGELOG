@@ -1,3 +1,6 @@
+0.1.5 (October 11th, 2009) - Jeff Kreeftmeijer
+* fixed a bug that occurred while submitting the form.
+
 0.1.4 (October 5th, 2009) - Jeff Kreeftmeijer
 * removed the :paste button, you can now just paste it in the editor. It will work ;)
 * added a destroy function for the wysihat_files

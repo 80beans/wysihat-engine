@@ -67,11 +67,13 @@ Event.observe(window, 'load', function() {
         event.target.reload();
       }, 1);
     });
+		
+		$$('form').each(function(f){
+			f.onsubmit = function(){
+				editor.save();
+			}
+		});
   });
-  
-  $$('form').each().onsubmit = function(){ 
-    editor.save();
-  };
 });
 
 function addButtons(tag_id, buttons){
