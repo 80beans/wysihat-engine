@@ -2,18 +2,13 @@ h1. WysihatEngine
 
 A Rails engine to help integrate the 37signals WyshiHat rich text editor to your application.
 
-h2. Installation
+h2. Using the Wysihat Engine
 
-http://wiki.github.com/80beans/wysihat-engine/installation
-
-h2. Examples
-
-http://wiki.github.com/80beans/wysihat-engine/examples
+We've written an "Installation Guide":http://wiki.github.com/80beans/wysihat-engine/installation and some "Examples":http://wiki.github.com/80beans/wysihat-engine/examples to get you started. Any questions? Don't hesitate to "ask":http://github.com/inbox/new/jkreeftmeijer.
 
 h2. Contributing
 
-Found an issue? Have a great idea? Want to help? Great!
-Please take a second to read the "Contributing Guide":http://wiki.github.com/80beans/wysihat-engine/contributing.
+Found an issue? Have a great idea? Want to help? Great! Please take a second to read the "Contributing Guide":http://wiki.github.com/80beans/wysihat-engine/contributing.
 
 h2. License
 
