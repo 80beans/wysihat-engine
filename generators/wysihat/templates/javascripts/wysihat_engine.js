@@ -55,7 +55,7 @@ Event.observe(window, 'load', function() {
     var toolbar = new WysiHat.Toolbar(editor);
 		toolbars[i.id] = toolbar;
 		
-		editor.outputFilter = function(text) {
+		editor.inputFilter = function(text) {
       return text.formatHTMLOutput().sanitize({
         tags: ['span', 'p', 'br', 'strong', 'em', 'a'],
         attributes: ['id', 'href']
