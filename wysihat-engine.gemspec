@@ -17,8 +17,6 @@ Gem::Specification.new do |s|
   ]
   s.files = [
     ".gitignore",
-     ".sass-cache/075110043e60f7d2363f8dabe80fdc0dbd451644/facebox.sassc",
-     ".sass-cache/075110043e60f7d2363f8dabe80fdc0dbd451644/wysihat.sassc",
      "CHANGELOG",
      "MIT-LICENSE",
      "README.textile",
