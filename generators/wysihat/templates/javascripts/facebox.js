@@ -1,26 +1,16 @@
-/*  Facebox for Prototype, version 2.0
- *  By Robert Gaal - http://wakoopa.com 
+/* Facebox for Prototype
  *
- *  Heavily based on Facebox by Chris Wanstrath - http://famspam.com/facebox
- *  First ported to Prototype by Phil Burrows - http://blog.philburrows.com
+ * This is a slightly updated version of jeffkreeftmeijer's branch of facebox-for-prototype
+ * (http://github.com/jeffkreeftmeijer/facebox-for-prototype). The image locations are 
+ * changed -- from /images/ to /images/facebox/ -- to keep the engine nice and tidy.
  *
- *  Licensed under the MIT:
- *  http://www.opensource.org/licenses/mit-license.php
- *
- *  Need help?  Join the Google Groups mailing list:
- *  http://groups.google.com/group/facebox/
- *
- *  Dependencies:   prototype & script.aculo.us + images & CSS files from original facebox
- *  Usage:          Append 'rel="facebox"' to an element to call it inside a so-called facebox
- *
- *--------------------------------------------------------------------------*/
-
+ */
 
 var Facebox = Class.create({
 	initialize	: function(extra_set){
 		this.settings = {
-			loading_image	: '/images/loading.gif',
-			close_image		: '/images/closelabel.gif',
+			loading_image	: '/images/facebox/loading.gif',
+			close_image		: '/images/facebox/closelabel.gif',
 			image_types		: new RegExp('\.' + ['png', 'jpg', 'jpeg', 'gif'].join('|') + '$', 'i'),
 			inited				: true,	
 			facebox_html	: '\
@@ -38,7 +28,7 @@ var Facebox = Class.create({
 	              </div> \
 	              <div class="footer"> \
 	                <a href="#" class="close"> \
-	                  <img src="/images/closelabel.gif" title="close" class="close_image" /> \
+	                  <img src="/images/facebox/closelabel.gif" title="close" class="close_image" /> \
 	                </a> \
 	              </div> \
 	            </td> \

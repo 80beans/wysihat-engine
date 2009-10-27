@@ -21,12 +21,14 @@ class WysihatGenerator < Rails::Generator::Base
         m.file 'css/facebox.css',   'public/stylesheets/facebox.css'
       end
       
-      m.file 'images/b.png',                  'public/images/b.png'      
-      m.file 'images/bl.png',                 'public/images/bl.png'      
-      m.file 'images/br.png',                 'public/images/br.png'      
-      m.file 'images/closelabel.gif',         'public/images/closelabel.gif'
-      m.file 'images/tl.png',                 'public/images/tl.png'      
-      m.file 'images/tr.png',                 'public/images/tr.png'
+      m.directory 'public/images/facebox'
+      m.file 'images/facebox/b.png',                  'public/images/facebox/b.png'      
+      m.file 'images/facebox/bl.png',                 'public/images/facebox/bl.png'      
+      m.file 'images/facebox/br.png',                 'public/images/facebox/br.png'      
+      m.file 'images/facebox/closelabel.gif',         'public/images/facebox/closelabel.gif'
+      m.file 'images/facebox/tl.png',                 'public/images/facebox/tl.png'      
+      m.file 'images/facebox/tr.png',                 'public/images/facebox/tr.png'
+      m.file 'images/facebox/loading.gif',            'public/images/facebox/loading.png'
       
       # stylesheet & icons
       
@@ -37,27 +39,21 @@ class WysihatGenerator < Rails::Generator::Base
           m.file 'css/wysihat.css',   'public/stylesheets/wysihat.css'
         end
         
-        m.file 'images/arrow_redo.png',         'public/images/arrow_redo.png'      
-        m.file 'images/arrow_undo.png',         'public/images/arrow_undo.png'      
-        m.file 'images/exclamation.png',        'public/images/exclamation.png'      
-        m.file 'images/film.png',               'public/images/film.png'      
-        m.file 'images/image.png',              'public/images/image.png'      
-        m.file 'images/link.png',               'public/images/link.png'      
-        m.file 'images/loading.gif',            'public/images/loading.gif'      
-        m.file 'images/page_code.png',          'public/images/page_code.png'      
-        m.file 'images/page_white_flash.png',   'public/images/page_white_flash.png'      
-        m.file 'images/text_align_center.png',  'public/images/text_align_center.png'      
-        m.file 'images/text_align_left.png',    'public/images/text_align_left.png'      
-        m.file 'images/text_align_right.png',   'public/images/text_align_right.png'      
-        m.file 'images/text_bold.png',          'public/images/text_bold.png'      
-        m.file 'images/text_heading_1.png',     'public/images/text_heading_1.png'      
-        m.file 'images/text_heading_2.png',     'public/images/text_heading_2.png'      
-        m.file 'images/text_heading_3.png',     'public/images/text_heading_3.png'      
-        m.file 'images/text_italic.png',        'public/images/text_italic.png'      
-        m.file 'images/text_list_bullets.png',  'public/images/text_list_bullets.png'      
-        m.file 'images/text_list_numbers.png',  'public/images/text_list_numbers.png'      
-        m.file 'images/text_strikethrough.png', 'public/images/text_strikethrough.png'      
-        m.file 'images/text_underline.png',     'public/images/text_underline.png'
+        m.directory 'public/images/icons'
+        m.file 'images/icons/arrow_redo.png',         'public/images/icons/arrow_redo.png'      
+        m.file 'images/icons/arrow_undo.png',         'public/images/icons/arrow_undo.png'      
+        m.file 'images/icons/image.png',              'public/images/icons/image.png'      
+        m.file 'images/icons/link.png',               'public/images/icons/link.png'      
+        m.file 'images/icons/page_code.png',          'public/images/icons/page_code.png'      
+        m.file 'images/icons/text_align_center.png',  'public/images/icons/text_align_center.png'      
+        m.file 'images/icons/text_align_left.png',    'public/images/icons/text_align_left.png'      
+        m.file 'images/icons/text_align_right.png',   'public/images/icons/text_align_right.png'      
+        m.file 'images/icons/text_bold.png',          'public/images/icons/text_bold.png'           
+        m.file 'images/icons/text_italic.png',        'public/images/icons/text_italic.png'      
+        m.file 'images/icons/text_list_bullets.png',  'public/images/icons/text_list_bullets.png'      
+        m.file 'images/icons/text_list_numbers.png',  'public/images/icons/text_list_numbers.png'      
+        m.file 'images/icons/text_strikethrough.png', 'public/images/icons/text_strikethrough.png'      
+        m.file 'images/icons/text_underline.png',     'public/images/icons/text_underline.png'
       end
 
       m.migration_template                    'migrations/create_wysihat_files.rb',

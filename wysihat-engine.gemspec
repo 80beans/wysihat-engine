@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{wysihat-engine}
-  s.version = "0.1.5"
+  s.version = "0.1.6"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Jeff Kreeftmeijer"]
-  s.date = %q{2009-10-12}
+  s.date = %q{2009-10-27}
   s.description = %q{A Rails engine to help integrate the 37signals WyshiHat rich text editor to your application.}
   s.email = %q{jeff@80beans.com}
   s.extra_rdoc_files = [
@@ -17,6 +17,8 @@ Gem::Specification.new do |s|
   ]
   s.files = [
     ".gitignore",
+     ".sass-cache/075110043e60f7d2363f8dabe80fdc0dbd451644/facebox.sassc",
+     ".sass-cache/075110043e60f7d2363f8dabe80fdc0dbd451644/wysihat.sassc",
      "CHANGELOG",
      "MIT-LICENSE",
      "README.textile",
@@ -35,33 +37,27 @@ Gem::Specification.new do |s|
      "generators/wysihat/templates/css/.sass-cache/242b5853f919a8e6346032f619374fe0847bac7b/wysihat.cssc",
      "generators/wysihat/templates/css/facebox.css",
      "generators/wysihat/templates/css/wysihat.css",
-     "generators/wysihat/templates/images/arrow_redo.png",
-     "generators/wysihat/templates/images/arrow_undo.png",
-     "generators/wysihat/templates/images/b.png",
-     "generators/wysihat/templates/images/bl.png",
-     "generators/wysihat/templates/images/br.png",
-     "generators/wysihat/templates/images/closelabel.gif",
-     "generators/wysihat/templates/images/exclamation.png",
-     "generators/wysihat/templates/images/film.png",
-     "generators/wysihat/templates/images/image.png",
-     "generators/wysihat/templates/images/link.png",
-     "generators/wysihat/templates/images/loading.gif",
-     "generators/wysihat/templates/images/page_code.png",
-     "generators/wysihat/templates/images/page_white_flash.png",
-     "generators/wysihat/templates/images/text_align_center.png",
-     "generators/wysihat/templates/images/text_align_left.png",
-     "generators/wysihat/templates/images/text_align_right.png",
-     "generators/wysihat/templates/images/text_bold.png",
-     "generators/wysihat/templates/images/text_heading_1.png",
-     "generators/wysihat/templates/images/text_heading_2.png",
-     "generators/wysihat/templates/images/text_heading_3.png",
-     "generators/wysihat/templates/images/text_italic.png",
-     "generators/wysihat/templates/images/text_list_bullets.png",
-     "generators/wysihat/templates/images/text_list_numbers.png",
-     "generators/wysihat/templates/images/text_strikethrough.png",
-     "generators/wysihat/templates/images/text_underline.png",
-     "generators/wysihat/templates/images/tl.png",
-     "generators/wysihat/templates/images/tr.png",
+     "generators/wysihat/templates/images/facebox/b.png",
+     "generators/wysihat/templates/images/facebox/bl.png",
+     "generators/wysihat/templates/images/facebox/br.png",
+     "generators/wysihat/templates/images/facebox/closelabel.gif",
+     "generators/wysihat/templates/images/facebox/loading.gif",
+     "generators/wysihat/templates/images/facebox/tl.png",
+     "generators/wysihat/templates/images/facebox/tr.png",
+     "generators/wysihat/templates/images/icons/arrow_redo.png",
+     "generators/wysihat/templates/images/icons/arrow_undo.png",
+     "generators/wysihat/templates/images/icons/image.png",
+     "generators/wysihat/templates/images/icons/link.png",
+     "generators/wysihat/templates/images/icons/page_code.png",
+     "generators/wysihat/templates/images/icons/text_align_center.png",
+     "generators/wysihat/templates/images/icons/text_align_left.png",
+     "generators/wysihat/templates/images/icons/text_align_right.png",
+     "generators/wysihat/templates/images/icons/text_bold.png",
+     "generators/wysihat/templates/images/icons/text_italic.png",
+     "generators/wysihat/templates/images/icons/text_list_bullets.png",
+     "generators/wysihat/templates/images/icons/text_list_numbers.png",
+     "generators/wysihat/templates/images/icons/text_strikethrough.png",
+     "generators/wysihat/templates/images/icons/text_underline.png",
      "generators/wysihat/templates/javascripts/facebox.js",
      "generators/wysihat/templates/javascripts/wysihat.js",
      "generators/wysihat/templates/javascripts/wysihat_engine.js",

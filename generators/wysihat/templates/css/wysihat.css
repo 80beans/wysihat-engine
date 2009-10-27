@@ -1,72 +1,41 @@
-div.editor_toolbar a{
-  float:left;
-  width:16px;
-  height:16px;
-  margin:5px;
-  background-repeat: no-repeat;
-}
-
-div.editor_toolbar span{
-  display:none;
-}
+div.editor_toolbar a {
+  float: left;
+  width: 16px;
+  height: 16px;
+  margin: 5px;
+  background-repeat: no-repeat; }
+div.editor_toolbar span {
+  display: none; }
 
 .editor_toolbar .bold {
-  background-image: url('../images/text_bold.png');
-}
-
+  background-image: url('../images/icons/text_bold.png'); }
 .editor_toolbar .italic {
-  background-image: url('../images/text_italic.png');
-}
-
+  background-image: url('../images/icons/text_italic.png'); }
 .editor_toolbar .underline {
-  background-image: url('../images/text_underline.png');
-}
-
+  background-image: url('../images/icons/text_underline.png'); }
 .editor_toolbar .strikethrough {
-  background-image: url('../images/text_strikethrough.png');
-}
-
+  background-image: url('../images/icons/text_strikethrough.png'); }
 .editor_toolbar .justifyleft {
-  background-image: url('../images/text_align_left.png');
-}
-
+  background-image: url('../images/icons/text_align_left.png'); }
 .editor_toolbar .justifycenter {
-  background-image: url('../images/text_align_center.png');
-}
-
+  background-image: url('../images/icons/text_align_center.png'); }
 .editor_toolbar .justifyright {
-  background-image: url('../images/text_align_right.png');
-}
-
+  background-image: url('../images/icons/text_align_right.png'); }
 .editor_toolbar .undo {
-  background-image: url('../images/arrow_undo.png');
-}
-
+  background-image: url('../images/icons/arrow_undo.png'); }
 .editor_toolbar .redo {
-  background-image: url('../images/arrow_redo.png');
-}
-
+  background-image: url('../images/icons/arrow_redo.png'); }
 .editor_toolbar .insertorderedlist {
-  background-image: url('../images/text_list_numbers.png');
-}
-
+  background-image: url('../images/icons/text_list_numbers.png'); }
 .editor_toolbar .insertunorderedlist {
-  background-image: url('../images/text_list_bullets.png');
-}
-
+  background-image: url('../images/icons/text_list_bullets.png'); }
 .editor_toolbar .link {
-  background-image: url('../images/link.png');
-}
-
+  background-image: url('../images/icons/link.png'); }
 .editor_toolbar .image {
-  background-image: url('../images/image.png');
-}
-
+  background-image: url('../images/icons/image.png'); }
 .editor_toolbar .html {
-  background-image: url('../images/page_code.png');
-}
+  background-image: url('../images/icons/page_code.png'); }
 
-iframe.editor{
-  height:400px;
-  width:100%;
-}
+iframe.editor {
+  height: 400px;
+  width: 100%; }
