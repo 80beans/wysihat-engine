@@ -1,2 +1,1 @@
 * add a config.yml file and put some of the settings in there
-* create sassify & cssify rake tasks (like the minify one)
