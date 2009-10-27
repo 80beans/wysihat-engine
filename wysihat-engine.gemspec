@@ -31,8 +31,6 @@ Gem::Specification.new do |s|
      "app/views/wysihat_files/index.html.erb",
      "app/views/wysihat_files/new.html.erb",
      "config/locales/en.yml",
-     "generators/wysihat/templates/css/.sass-cache/242b5853f919a8e6346032f619374fe0847bac7b/facebox.cssc",
-     "generators/wysihat/templates/css/.sass-cache/242b5853f919a8e6346032f619374fe0847bac7b/wysihat.cssc",
      "generators/wysihat/templates/css/facebox.css",
      "generators/wysihat/templates/css/wysihat.css",
      "generators/wysihat/templates/images/facebox/b.png",
