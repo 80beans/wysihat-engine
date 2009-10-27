@@ -40,7 +40,24 @@ task :minify do
   
   pack.write(compressor.compress(string))
   pack.close
-end  
+end
+
+desc 'create css files from the sass files. It will overwrite files if they already exist.'
+task :cssify do
+  files = ['facebox', 'wysihat']
+  files.each do |file|
+    system "sass generators/wysihat/templates/sass/#{file}.sass generators/wysihat/templates/css/#{file}.css"
+  end
+end 
+
+desc 'create sass files from the css files. It will overwrite files if they already exist.'
+task :cssify do
+  files = ['facebox', 'wysihat']
+  files.each do |file|
+    system "css2sass generators/wysihat/templates/css/#{file}.css generators/wysihat/templates/sass/#{file}.sass"
+  end
+end 
+
 
 begin
   require 'jeweler'
