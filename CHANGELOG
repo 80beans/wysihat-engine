@@ -1,3 +1,6 @@
+0.1.6 -- "rake" branch (October 27th, 2009) - Jeff Kreeftmeijer
+* created sassify & cssify rake tasks (like the minify one)
+
 0.1.6 (October 21st, 2009) - Jeff Kreeftmeijer
 * fixed a bug that sanitized the output (onsumbit) rather than the input (on paste).
 
