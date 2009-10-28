@@ -1,4 +1,5 @@
 0.1.7 (October 27th, 2009) - Jeff Kreeftmeijer
+* fixed a bug in the generator; it copied "loading.gif" to "loading.png". Thanks Eric! 
 * put the facebox images & icons in a subdir
 * created sassify & cssify rake tasks (like the minify one)
 * removed the .sass_cache dir and added it to the .gitignore file.
