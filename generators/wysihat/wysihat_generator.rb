@@ -28,7 +28,7 @@ class WysihatGenerator < Rails::Generator::Base
       m.file 'images/facebox/closelabel.gif',         'public/images/facebox/closelabel.gif'
       m.file 'images/facebox/tl.png',                 'public/images/facebox/tl.png'      
       m.file 'images/facebox/tr.png',                 'public/images/facebox/tr.png'
-      m.file 'images/facebox/loading.gif',            'public/images/facebox/loading.png'
+      m.file 'images/facebox/loading.gif',            'public/images/facebox/loading.gif'
       
       # stylesheet & icons
       
