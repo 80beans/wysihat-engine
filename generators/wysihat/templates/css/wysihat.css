@@ -7,6 +7,8 @@ div.editor_toolbar a {
 div.editor_toolbar span {
   display: none; }
 
+.editor_toolbar .button {
+  background-image: url('../images/icons/exclamation.png'); }
 .editor_toolbar .bold {
   background-image: url('../images/icons/text_bold.png'); }
 .editor_toolbar .italic {

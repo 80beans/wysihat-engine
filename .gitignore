@@ -1,6 +1,6 @@
 *.sw?
 .DS_Store
-.sass_cache
+.sass-cache
 coverage
 rdoc
 pkg
