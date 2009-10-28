@@ -51,7 +51,7 @@ task :cssify do
 end 
 
 desc 'create sass files from the css files. It will overwrite files if they already exist.'
-task :cssify do
+task :sassify do
   files = ['facebox', 'wysihat']
   files.each do |file|
     system "css2sass generators/wysihat/templates/css/#{file}.css generators/wysihat/templates/sass/#{file}.sass"
