@@ -42,6 +42,7 @@ Gem::Specification.new do |s|
      "generators/wysihat/templates/images/facebox/tr.png",
      "generators/wysihat/templates/images/icons/arrow_redo.png",
      "generators/wysihat/templates/images/icons/arrow_undo.png",
+     "generators/wysihat/templates/images/icons/exclamation.png",
      "generators/wysihat/templates/images/icons/image.png",
      "generators/wysihat/templates/images/icons/link.png",
      "generators/wysihat/templates/images/icons/page_code.png",
