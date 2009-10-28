@@ -6,6 +6,10 @@ h2. Using the WysiHat Engine
 
 We've written an "Installation Guide":http://wiki.github.com/80beans/wysihat-engine/installation and some "Examples":http://wiki.github.com/80beans/wysihat-engine/examples to get you started. Any questions? Don't hesitate to "ask":http://github.com/inbox/new/jeffkreeftmeijer.
 
+h2. Demo
+
+There's a "demo rails app":http://github.com/80beans/wysihat-engine-demo so you can have a quick look around. 
+
 h2. Contributing
 
 Found an issue? Have a great idea? Want to help? Great! Please take a second to read the "Contributing Guide":http://wiki.github.com/80beans/wysihat-engine/contributing.
