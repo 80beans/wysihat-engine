@@ -1,6 +1,7 @@
 0.1.7 (October 28th, 2009) - Jeff Kreeftmeijer
 * fixed a bug in the generator; it copied "loading.gif" to "loading.png". Thanks Eric! 
 * two functions in the rakefile were called cssify. One should've been called sassify. fixed :)
+* added "render :layout => false" to WysihatFilesController#index
 
 0.1.7 (October 27th, 2009) - Jeff Kreeftmeijer
 * put the facebox images & icons in a subdir

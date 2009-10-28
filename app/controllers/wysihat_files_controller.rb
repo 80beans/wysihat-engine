@@ -1,6 +1,7 @@
 class WysihatFilesController < ApplicationController
   def index
     @wysihat_file, @wysihat_files = WysihatFile.new, WysihatFile.all
+    render :layout => false
   end
   
   def create
