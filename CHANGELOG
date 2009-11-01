@@ -1,3 +1,6 @@
+0.1.7 (November 1st, 2009) - Jeff Kreeftmeijer
+* added the exclamation.png icon back in the generator.
+
 0.1.7 (October 28th, 2009) - Jeff Kreeftmeijer
 * fixed a bug in the generator; it copied "loading.gif" to "loading.png". Thanks Eric! 
 * two functions in the rakefile were called cssify. One should've been called sassify. fixed :)
