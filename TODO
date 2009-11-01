@@ -1,1 +1,3 @@
 * add a config.yml file and put some of the settings in there
+* use sprockets for javascripts, stylesheets and images
+* add font selection
