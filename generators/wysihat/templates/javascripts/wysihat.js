@@ -447,7 +447,7 @@ WysiHat.Window = (function() {
   }
 
   function getWindow() {
-    if (this.contentDocument)
+    if (this.contentDocument && this.contentDocument.defaultView)
       return this.contentDocument.defaultView;
     else if (this.contentWindow.document)
       return this.contentWindow;
@@ -553,31 +553,6 @@ WysiHat.iFrame.Methods = {
 
     return this;
   },
-
-
-  linkStyleSheet: function(href) {
-    this.whenReady(function(editor){
-      var document = editor.getDocument();
-      if(document.createStyleSheet) { // IE
-        document.createStyleSheet(css);
-      } else {
-        var head = document.documentElement.getElementsByTagName('head')[0];
-        if (!head) {
-          head=document.createElement('head');
-          document.documentElement.insertBefore(head,document.getElementsByTagName('body')[0]);
-        }
-        var link='<link href="'+href+'" media="screen" rel="stylesheet" type="text/css"/>';
-        head=$(head);
-        if (head.insert) { // Safari
-          $(head).insert(link);
-        } else { // everyone else
-          head.innerHTML=head.innerHTML+link;
-        }
-      }
-    });
-  },
-
-
 
   /**
    *  WysiHat.iFrame.Methods#getStyle(style) -> string
@@ -2017,7 +1992,7 @@ WysiHat.Toolbar = Class.create((function() {
   }
 
   function createButtonElement(toolbar, options) {
-    var button = Element('a', {
+    var button = new Element('a', {
       'class': 'button', 'href': '#'
     });
     button.update('<span>' + options.get('label') + '</span>');
