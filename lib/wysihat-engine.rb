@@ -10,7 +10,6 @@ module ActionView
   
     class InstanceTag #:nodoc:
       def to_wysihat_editor_tag(options = {})
-        
         options = DEFAULT_TEXT_AREA_OPTIONS.merge(options.stringify_keys)
         add_default_name_and_id(options)
 
@@ -20,8 +19,7 @@ module ActionView
         
         buttons, helpers = '', ''
         
-        case options['buttons']
-        when nil, :all
+        if options['buttons'] == nil || options['buttons'] == :all
           options['buttons'] = [:bold, :italic, :underline, :strikethrough, :justify_left, :justify_center, :justify_right, :insert_ordered_list, :insert_unordered_list, :undo, :redo, :link, :html, :image]
         end
  
