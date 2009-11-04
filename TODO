@@ -1,3 +1,4 @@
 * add a config.yml file and put some of the settings in there
 * use sprockets for javascripts, stylesheets and images
 * add font selection
+* figure out a way to do a "clean paste". (paste without any markup or styling)
