@@ -56,7 +56,7 @@ Event.observe(window, 'load', function() {
 		toolbars[i.id] = toolbar;
 		
 		editor.inputFilter = function(text) {
-      return text.formatHTMLOutput().sanitize({
+      return text.formatHTMLInput().sanitize({
         tags: ['span', 'p', 'br', 'strong', 'em', 'a'],
         attributes: ['id', 'href']
       });
