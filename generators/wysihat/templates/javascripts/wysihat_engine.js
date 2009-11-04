@@ -55,14 +55,7 @@ Event.observe(window, 'load', function() {
     var toolbar = new WysiHat.Toolbar(editor);
 		toolbars[i.id] = toolbar;
 		
-		editor.inputFilter = function(text) {
-      return text.formatHTMLInput().sanitize({
-        tags: ['span', 'p', 'br', 'strong', 'em', 'a'],
-        attributes: ['id', 'href']
-      });
-    };
-
-    editor.observe("wysihat:paste", function(event) {
+		editor.observe("wysihat:paste", function(event) {
       setTimeout(function() {
         event.target.reload();
       }, 1);
