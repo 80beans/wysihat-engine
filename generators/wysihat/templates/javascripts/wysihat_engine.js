@@ -4,12 +4,12 @@ var WysihatHelper = {
   faceboxFile: function()
   {
     facebox.loading();
-    new Effect.Appear($('facebox'), {duration: .3});
+    new Effect.Appear($('facebox'), {duration: 0.3});
 
     var fb  = facebox;
-  	var url = '/wysihat_files/?editor=' + this.id
+    var url = '/wysihat_files/?editor=' + this.id;
 
-  	new Ajax.Request(url, {
+    new Ajax.Request(url, {
   		method		: 'get',
   		onFailure	: function(transport){
   			fb.reveal(transport.responseText, null);
@@ -26,8 +26,8 @@ var WysihatHelper = {
       this.unlinkSelection();
     } else {
       facebox.loading();
-      new Effect.Appear($('facebox'), {duration: .3});
-      iframe = this
+      new Effect.Appear($('facebox'), {duration: 0.3});
+      iframe = this;
       facebox.reveal('<input type=\"text\" id=\"link_field\" style=\"width:100%;\"/>', null);         
       Event.observe('link_field', 'change', function(event) {
         iframe.linkSelection($('link_field').value);
@@ -38,14 +38,14 @@ var WysihatHelper = {
   faceboxHTML: function()
   {
     facebox.loading();
-    new Effect.Appear($('facebox'), {duration: .3});
-    iframe = this
+    new Effect.Appear($('facebox'), {duration: 0.3});
+    iframe = this;
     facebox.reveal('<textarea id=\"html_editor\" style=\"width:100%; height:400px;\">' + iframe.contentWindow.document.body.innerHTML + '</textarea>', null);         
     Event.observe('html_editor', 'change', function(event) {
       iframe.contentWindow.document.body.innerHTML = $('html_editor').value;
     });
-  },
-}
+  }
+};
 
 WysiHat.Editor.include(WysihatHelper);
 
@@ -64,7 +64,7 @@ Event.observe(window, 'load', function() {
 		$$('form').each(function(f){
 			f.onsubmit = function(){
 				editor.save();
-			}
+			};
 		});
   });
 });
@@ -89,6 +89,6 @@ function addButtons(tag_id, buttons){
 				default:
 					toolbars[tag_id].addButton({label : button.gsub('_','-').camelize().capitalize()});
 			}
-		})                                        
-	})
+		});                                        
+	});
 }
