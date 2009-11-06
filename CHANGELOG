@@ -1,3 +1,6 @@
+0.1.7 (November 6th, 2009) - Jeff Kreeftmeijer
+* Toolbar didn't show up in IE. Fixed :)
+
 0.1.7 (November 1st, 2009) - Jeff Kreeftmeijer
 * added the exclamation.png icon back in the generator.
 

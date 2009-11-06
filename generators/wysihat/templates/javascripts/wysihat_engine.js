@@ -47,48 +47,33 @@ var WysihatHelper = {
   }
 };
 
-WysiHat.Editor.include(WysihatHelper);
-
-Event.observe(window, 'load', function() {
-	$$('textarea.wysihat_editor').each(function(i){   
-    var editor = WysiHat.Editor.attach(i.id);
-    var toolbar = new WysiHat.Toolbar(editor);
-		toolbars[i.id] = toolbar;
+function WysiHatify(tag_id, buttons){
+  WysiHat.Editor.include(WysihatHelper);
+  var editor = WysiHat.Editor.attach(tag_id);
+  var toolbar = new WysiHat.Toolbar(editor);
 		
-		editor.observe("wysihat:paste", function(event) {
-      setTimeout(function() {
-        event.target.reload();
-      }, 1);
-    });
-		
-		$$('form').each(function(f){
-			f.onsubmit = function(){
-				editor.save();
-			};
-		});
-  });
-});
-
-function addButtons(tag_id, buttons){
-	Event.observe(window, 'load', function() {
-		buttons.each(function(button){
-			
-			switch(button.toLowerCase()){
-				case 'image':
-					toolbars[tag_id].addButton({label : button.gsub('_','-').camelize().capitalize(), handler: function(editor) { return editor.faceboxFile(editor); }}); 
-				break;
-				case 'link':
-					toolbars[tag_id].addButton({label : button.gsub('_','-').camelize().capitalize(), handler: function(editor) { return editor.faceboxLink(editor); }}); 
-				break;
-				case 'html':
-					toolbars[tag_id].addButton({label : button.gsub('_','-').camelize().capitalize(), handler: function(editor) { return editor.faceboxHTML(editor); }}); 
-				break;
-				case 'paste':
-					toolbars[tag_id].addButton({label : button.gsub('_','-').camelize().capitalize(), handler: function(editor) { return editor.faceboxPaste(editor); }}); 
-				break;
-				default:
-					toolbars[tag_id].addButton({label : button.gsub('_','-').camelize().capitalize()});
-			}
-		});                                        
+	$$('form').each(function(){
+	  onsubmit = function(){
+		  editor.save();
+	  };
 	});
+			
+	buttons.each(function(button){	
+		switch(button.toLowerCase()){
+			case 'image':
+				toolbar.addButton({label : button.gsub('_','-').camelize().capitalize(), handler: function(editor) { return editor.faceboxFile(editor); }}); 
+			break;
+			case 'link':
+				toolbar.addButton({label : button.gsub('_','-').camelize().capitalize(), handler: function(editor) { return editor.faceboxLink(editor); }}); 
+			break;
+			case 'html':
+				toolbar.addButton({label : button.gsub('_','-').camelize().capitalize(), handler: function(editor) { return editor.faceboxHTML(editor); }}); 
+			break;
+			case 'paste':
+				toolbar.addButton({label : button.gsub('_','-').camelize().capitalize(), handler: function(editor) { return editor.faceboxPaste(editor); }}); 
+			break;
+			default:
+		    toolbar.addButton({label : button.gsub('_','-').camelize().capitalize()});
+	  }
+	});                                        
 }

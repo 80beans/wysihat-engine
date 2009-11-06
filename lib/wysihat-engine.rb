@@ -25,7 +25,9 @@ module ActionView
  
         content_tag(
           :script,
-          "addButtons('#{tag_id}', ['#{options.delete('buttons').join('\', \'')}']);",
+          "Event.observe(window, 'load', function() {" <<
+          "WysiHatify('#{tag_id}', ['#{options.delete('buttons').join('\', \'')}']);" <<
+          "});",
           :type => 'text/javascript'
         ) <<
         content_tag("textarea", html_escape(options.delete('value') || value_before_type_cast(object)), options.merge(:class => 'wysihat_editor'))
