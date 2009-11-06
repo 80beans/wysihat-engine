@@ -47,7 +47,7 @@ var WysihatHelper = {
   }
 };
 
-function WysiHatify(tag_id, buttons){
+function wysiHatify(tag_id, buttons){
   WysiHat.Editor.include(WysihatHelper);
   var editor = WysiHat.Editor.attach(tag_id);
   var toolbar = new WysiHat.Toolbar(editor);
