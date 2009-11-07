@@ -39,5 +39,6 @@ div.editor_toolbar span {
   background-image: url('../images/icons/page_code.png'); }
 
 iframe.editor {
+  border: 1px solid #999;
   height: 400px;
   width: 100%; }
