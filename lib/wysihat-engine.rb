@@ -26,7 +26,7 @@ module ActionView
         content_tag(
           :script,
           "Event.observe(window, 'load', function() {" <<
-          "WysiHatify('#{tag_id}', ['#{options.delete('buttons').join('\', \'')}']);" <<
+          "wysiHatify('#{tag_id}', ['#{options.delete('buttons').join('\', \'')}']);" <<
           "});",
           :type => 'text/javascript'
         ) <<
