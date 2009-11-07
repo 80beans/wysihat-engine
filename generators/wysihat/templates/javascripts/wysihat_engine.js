@@ -51,9 +51,9 @@ function wysiHatify(tag_id, buttons){
   WysiHat.Editor.include(WysihatHelper);
   var editor = WysiHat.Editor.attach(tag_id);
   var toolbar = new WysiHat.Toolbar(editor);
-		
-	$$('form').each(function(){
-	  onsubmit = function(){
+	
+	$$('form').each(function(i){
+	  i.onsubmit = function(){
 		  editor.save();
 	  };
 	});
