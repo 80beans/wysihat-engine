@@ -12,25 +12,20 @@ module ActionView
       def to_wysihat_editor_tag(options = {})
         options = DEFAULT_TEXT_AREA_OPTIONS.merge(options.stringify_keys)
         add_default_name_and_id(options)
-
-        if size = options.delete("size")
-          options["cols"], options["rows"] = size.split("x") if size.respond_to?(:split)
-        end
         
-        buttons, helpers = '', ''
+        size = options.delete("size")
+        options["cols"], options["rows"] = size.split("x") if size && size.respond_to?(:split) 
         
         if options['buttons'] == nil || options['buttons'] == :all
-          options['buttons'] = [:bold, :italic, :underline, :strikethrough, :justify_left, :justify_center, :justify_right, :insert_ordered_list, :insert_unordered_list, :undo, :redo, :link, :html, :image]
+          buttons = [:bold, :italic, :underline, :strikethrough, :justify_left, :justify_center, :justify_right, :insert_ordered_list, :insert_unordered_list, :undo, :redo, :link, :html, :image]
         end
- 
-        content_tag(
-          :script,
-          "Event.observe(window, 'load', function() {" <<
-          "wysiHatify('#{tag_id}', ['#{options.delete('buttons').join('\', \'')}']);" <<
-          "});",
-          :type => 'text/javascript'
-        ) <<
-        content_tag("textarea", html_escape(options.delete('value') || value_before_type_cast(object)), options.merge(:class => 'wysihat_editor'))
+        
+        javascript = "Event.observe(window, 'load', function() {" <<
+        "wysiHatify('#{tag_id}', ['#{buttons.join('\', \'')}']);" <<
+        "});"
+        
+        content_tag(:script, javascript, :type => 'text/javascript') <<
+        content_tag(:textarea, html_escape(options.delete('value') || value_before_type_cast(object)), options.merge(:class => 'wysihat_editor'))
       end
     end
   
