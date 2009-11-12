@@ -63,8 +63,8 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "wysihat-engine"
-    gem.summary = "A Rails engine to help integrate the 37signals WyshiHat rich text editor to your application."
-    gem.description = "A Rails engine to help integrate the 37signals WyshiHat rich text editor to your application."
+    gem.summary = "A Rails engine to help integrate the 37signals WysiHat rich text editor to your application."
+    gem.description = "A Rails engine to help integrate the 37signals WysiHat rich text editor to your application."
     gem.email = "jeff@80beans.com"
     gem.homepage = "http://www.80beans.com/2009/10/01/wysihat-engine/"
     gem.authors = ["Jeff Kreeftmeijer"]

@@ -1,6 +1,6 @@
 h1. WysiHat Engine
 
-A Rails engine to help integrate the "37signals WyshiHat rich text editor":http://github.com/josh/wysihat/ to your application.
+A Rails engine to help integrate the "37signals WysiHat rich text editor":http://github.com/josh/wysihat/ to your application.
 
 h2. Using the WysiHat Engine
 
