@@ -1,3 +1,6 @@
+0.1.8 (December 1st, 2009) - Jeff Kreeftmeijer
+* Merged in champierre's bugfix (bbe4163577f22bfae997c96bdc43eb3fd4497ec0)
+
 0.1.7 (November 6th, 2009) - Jeff Kreeftmeijer
 * Toolbar didn't show up in IE. Fixed :)
 
