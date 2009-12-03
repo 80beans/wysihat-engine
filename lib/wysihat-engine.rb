@@ -19,7 +19,7 @@ module ActionView
         if options['buttons'] == nil || options['buttons'] == :all
           buttons = [:bold, :italic, :underline, :strikethrough, :justify_left, :justify_center, :justify_right, :insert_ordered_list, :insert_unordered_list, :undo, :redo, :link, :html, :image]
         else
-          buttons = options[:buttons]
+          buttons = options['buttons']
         end
         
         javascript = "Event.observe(window, 'load', function() {" <<
