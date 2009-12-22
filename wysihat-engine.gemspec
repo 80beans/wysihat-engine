@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{wysihat-engine}
-  s.version = "0.1.8"
+  s.version = "0.1.9"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Jeff Kreeftmeijer"]
-  s.date = %q{2009-12-03}
+  s.date = %q{2009-12-22}
   s.description = %q{A Rails engine to help integrate the 37signals WysiHat rich text editor to your application.}
   s.email = %q{jeff@80beans.com}
   s.extra_rdoc_files = [
