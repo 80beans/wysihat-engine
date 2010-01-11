@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Jeff Kreeftmeijer"]
-  s.date = %q{2009-12-22}
+  s.date = %q{2010-01-11}
   s.description = %q{A Rails engine to help integrate the 37signals WysiHat rich text editor to your application.}
   s.email = %q{jeff@80beans.com}
   s.extra_rdoc_files = [
@@ -42,6 +42,7 @@ Gem::Specification.new do |s|
      "generators/wysihat/templates/images/facebox/tr.png",
      "generators/wysihat/templates/images/icons/arrow_redo.png",
      "generators/wysihat/templates/images/icons/arrow_undo.png",
+     "generators/wysihat/templates/images/icons/cancel.png",
      "generators/wysihat/templates/images/icons/exclamation.png",
      "generators/wysihat/templates/images/icons/image.png",
      "generators/wysihat/templates/images/icons/link.png",
@@ -50,6 +51,8 @@ Gem::Specification.new do |s|
      "generators/wysihat/templates/images/icons/text_align_left.png",
      "generators/wysihat/templates/images/icons/text_align_right.png",
      "generators/wysihat/templates/images/icons/text_bold.png",
+     "generators/wysihat/templates/images/icons/text_heading_1.png",
+     "generators/wysihat/templates/images/icons/text_heading_6.png",
      "generators/wysihat/templates/images/icons/text_italic.png",
      "generators/wysihat/templates/images/icons/text_list_bullets.png",
      "generators/wysihat/templates/images/icons/text_list_numbers.png",

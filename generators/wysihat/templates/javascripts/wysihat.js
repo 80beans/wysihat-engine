@@ -1,6 +1,10 @@
 /*  WysiHat - WYSIWYG JavaScript framework, version 0.2
  *  (c) 2008-2009 Joshua Peek
  *
+ *  THIS IS THE 80BEANS VERSION OF WYSIHAT, WE'RE STILL WAITING FOR SOME
+ *  CHANGES (http://github.com/80beans/wysihat/commit/5f3e6316c8a00e5e858c934b553c897b50066e7a)
+ *  TO BE MERGED BACK INTO MASTER.
+ *
  *  WysiHat is freely distributable under the terms of an MIT-style license.
  *--------------------------------------------------------------------------*/
 
@@ -88,28 +92,13 @@ WysiHat.Commands = (function() {
     this.execCommand('fontname', false, font);
   }
 
-  function fontSelected() {
-    var node = this.selection.getNode();
-    return Element.getStyle(node, 'fontFamily');
-  }
-
   function fontSizeSelection(fontSize) {
     this.execCommand('fontsize', false, fontSize);
-  }
-
-  function fontSizeSelected() {
-    var node = this.selection.getNode();
-    return standardizeFontSize(Element.getStyle(node, 'fontSize'));
   }
 
   function colorSelection(color) {
     this.execCommand('forecolor', false, color);
   }
-
-   function colorSelected() {
-     var node = this.selection.getNode();
-     return standardizeColor(Element.getStyle(node, 'color'));
-   }
 
   function backgroundColorSelection(color) {
     if(Prototype.Browser.Gecko) {
@@ -117,11 +106,6 @@ WysiHat.Commands = (function() {
     } else {
       this.execCommand('backcolor', false, color);
     }
-  }
-
-  function backgroundColorSelected() {
-    var node = this.selection.getNode();
-    return standardizeColor(Element.getStyle(node, 'backgroundColor'));
   }
 
   function alignSelection(alignment) {
@@ -148,6 +132,10 @@ WysiHat.Commands = (function() {
   function linkSelected() {
     var node = this.selection.getNode();
     return node ? node.tagName.toUpperCase() == 'A' : false;
+  }
+
+  function formatblockSelection(element){
+    this.execCommand('formatblock', false, element);
   }
 
   function insertOrderedList() {
@@ -178,7 +166,7 @@ WysiHat.Commands = (function() {
 
     if (Prototype.Browser.IE) this.selection.restore();
 
-    var handler = this.commands.get(command)
+    var handler = this.commands.get(command);
     if (handler)
       handler.bind(this)(value);
     else
@@ -188,77 +176,22 @@ WysiHat.Commands = (function() {
   function queryCommandState(state) {
     var document = this.getDocument();
 
-    var handler = this.queryCommands.get(state)
+    var handler = this.queryCommands.get(state);
     if (handler)
       return handler.bind(this)();
     else
       return document.queryCommandState(state);
   }
-  var fontSizeNames = $w('xxx-small xx-small x-small small medium large x-large xx-large');
-  var fontSizePixels = $w('9px 10px 13px 16px 18px 24px 32px 48px');
 
-  if (Prototype.Browser.WebKit) {
-    fontSizeNames.shift();
-    fontSizeNames.push('-webkit-xxx-large');
-  }
-
-  function standardizeFontSize(fontSize) {
-    var newSize = fontSizeNames.indexOf(fontSize);
-    if (newSize >= 0) return newSize;
-
-    newSize = fontSizePixels.indexOf(fontSize);
-    if (newSize >= 0) return newSize;
-    return parseInt(fontSize);
-  }
-
-  function standardizeColor(color) {
-    if (!color || color.match(/[0-9a-f]{6}/i)) return color;
-    var m = color.toLowerCase().match(/^(rgba?|hsla?)\(([\s\.\-,%0-9]+)\)/);
-    if(m){
-      var c = m[2].split(/\s*,\s*/), l = c.length, t = m[1];
-      if((t == "rgb" && l == 3) || (t == "rgba" && l == 4)){
-        var r = c[0];
-        if(r.charAt(r.length - 1) == "%"){
-          var a = c.map(function(x){
-            return parseFloat(x) * 2.56;
-          });
-          if(l == 4){ a[3] = c[3]; }
-          return _colorFromArray(a);
-        }
-        return _colorFromArray(c);
-      }
-      if((t == "hsl" && l == 3) || (t == "hsla" && l == 4)){
-        var H = ((parseFloat(c[0]) % 360) + 360) % 360 / 360,
-          S = parseFloat(c[1]) / 100,
-          L = parseFloat(c[2]) / 100,
-          m2 = L <= 0.5 ? L * (S + 1) : L + S - L * S,
-          m1 = 2 * L - m2,
-          a = [_hue2rgb(m1, m2, H + 1 / 3) * 256,
-            _hue2rgb(m1, m2, H) * 256, _hue2rgb(m1, m2, H - 1 / 3) * 256, 1];
-        if(l == 4){ a[3] = c[3]; }
-        return _colorFromArray(a);
-      }
-    }
-    return null;  // dojo.Color
-  }
-
-  function _colorFromArray(a) {
-    var arr = a.slice(0, 3).map(function(x){
-      var s = parseInt(x).toString(16);
-      return s.length < 2 ? "0" + s : s;
-    });
-    return "#" + arr.join("");  // String
-  }
-
-  function _hue2rgb(m1, m2, h){
-     if(h < 0){ ++h; }
-     if(h > 1){ --h; }
-     var h6 = 6 * h;
-     if(h6 < 1){ return m1 + (m2 - m1) * h6; }
-     if(2 * h < 1){ return m2; }
-     if(3 * h < 2){ return m1 + (m2 - m1) * (2 / 3 - h) * 6; }
-     return m1;
-   }
+	function getSelectedStyles() {
+	  var styles = $H({});
+	  var editor = this;
+	  editor.styleSelectors.each(function(style){
+	    var node = editor.selection.getNode();
+      styles.set(style.first(), Element.getStyle(node, style.last()));
+	  });
+	  return styles;
+	}
 
   return {
      boldSelection:                    boldSelection,
@@ -270,29 +203,35 @@ WysiHat.Commands = (function() {
      strikethroughSelection:           strikethroughSelection,
      blockquoteSelection:              blockquoteSelection,
      fontSelection:                    fontSelection,
-     fontSelected:                     fontSelected,
      fontSizeSelection:                fontSizeSelection,
-     fontSizeSelected:                 fontSizeSelected,
      colorSelection:                   colorSelection,
-     colorSelected:                    colorSelected,
      backgroundColorSelection:         backgroundColorSelection,
-     backgroundColorSelected:          backgroundColorSelected,
      alignSelection:                   alignSelection,
      alignSelected:                    alignSelected,
      linkSelection:                    linkSelection,
      unlinkSelection:                  unlinkSelection,
      linkSelected:                     linkSelected,
+     formatblockSelection:             formatblockSelection,
      insertOrderedList:                insertOrderedList,
      insertUnorderedList:              insertUnorderedList,
      insertImage:                      insertImage,
      insertHTML:                       insertHTML,
      execCommand:                      execCommand,
      queryCommandState:                queryCommandState,
+     getSelectedStyles:                getSelectedStyles,
 
     commands: $H({}),
 
     queryCommands: $H({
       link: linkSelected
+    }),
+
+    styleSelectors: $H({
+      fontname:     'fontFamily',
+      fontsize:     'fontSize',
+      forecolor:    'color',
+      hilitecolor:  'backgroundColor',
+      backcolor:    'backgroundColor'
     })
   };
 })();
@@ -552,6 +491,42 @@ WysiHat.iFrame.Methods = {
     }
 
     return this;
+  },
+
+
+  linkStyleSheet: function(href) {
+    this.whenReady(function(editor){
+      var document = editor.getDocument();
+      if(document.createStyleSheet) { // IE
+        document.createStyleSheet(css);
+      } else {
+        var head = document.documentElement.getElementsByTagName('head')[0];
+        if (!head) {
+          head=document.createElement('head');
+          document.documentElement.insertBefore(head,document.getElementsByTagName('body')[0]);
+        }
+        var link='<link href="'+href+'" media="screen" rel="stylesheet" type="text/css"/>';
+        head=$(head);
+        if (head.insert) { // Safari
+          $(head).insert(link);
+        } else { // everyone else
+          head.innerHTML=head.innerHTML+link;
+        }
+      }
+    });
+  },
+
+
+
+  /**
+   *  WysiHat.iFrame.Methods#getStyle(style) -> string
+   *  - style specificication (i.e. backgroundColor)
+   *
+   *  Returns the style from the element based on the given style
+   */
+  getStyle: function(style) {
+    var document = this.getDocument();
+    return Element.getStyle(document.body, style);
   },
 
   /**
@@ -864,7 +839,7 @@ if (typeof Range == 'undefined') {
     this.START_TO_END   = 1;
     this.END_TO_END     = 2;
     this.END_TO_START   = 3;
-  }
+  };
 
   Range.CLONE_CONTENTS   = 0;
   Range.DELETE_CONTENTS  = 1;
@@ -1519,7 +1494,7 @@ if (!window.getSelection) {
     this.isCollapsed = true;
     this.rangeCount = 0;
     this.ranges = [];
-  }
+  };
 
   Object.extend(SelectionImpl.prototype, (function() {
     function addRange(r) {
@@ -1988,7 +1963,7 @@ WysiHat.Toolbar = Class.create((function() {
     this.observeButtonClick(button, handler);
 
     var handler = this.buttonStateHandler(name, options);
-    this.observeStateChanges(button, name, handler)
+    this.observeStateChanges(button, name, handler);
   }
 
   function createButtonElement(toolbar, options) {

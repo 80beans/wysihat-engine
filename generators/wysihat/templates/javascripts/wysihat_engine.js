@@ -75,6 +75,8 @@ function wysiHatify(tag_id, buttons){
 			break;
 			case 'paste':
 				toolbar.addButton({label : button.gsub('_','-').camelize().capitalize(), handler: function(editor) { return editor.faceboxPaste(editor); }});
+		  case 'h1': case 'h2': case 'h3': case 'h4': case 'h5': case 'h6': case 'p':
+			  toolbar.addButton({label : button.gsub('_','-').camelize().capitalize(), handler: function(editor) { return editor.formatblockSelection(button.toLowerCase()); }});	
 			break;
 			default:
 		    toolbar.addButton({label : button.gsub('_','-').camelize().capitalize()});

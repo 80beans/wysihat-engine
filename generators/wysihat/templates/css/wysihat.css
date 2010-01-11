@@ -37,6 +37,20 @@ div.editor_toolbar span {
   background-image: url('../images/icons/image.png'); }
 .editor_toolbar .html {
   background-image: url('../images/icons/page_code.png'); }
+.editor_toolbar .h1 {
+  background-image: url('../images/icons/text_heading_1.png'); }
+.editor_toolbar .h2 {
+  background-image: url('../images/icons/text_heading_2.png'); }
+.editor_toolbar .h3 {
+  background-image: url('../images/icons/text_heading_3.png'); }
+.editor_toolbar .h4 {
+  background-image: url('../images/icons/text_heading_4.png'); }
+.editor_toolbar .h5 {
+  background-image: url('../images/icons/text_heading_5.png'); }
+.editor_toolbar .h6 {
+  background-image: url('../images/icons/text_heading_6.png'); }
+.editor_toolbar .p {
+  background-image: url('../images/icons/cancel.png'); }
 
 iframe.editor {
   border: 1px solid #999;

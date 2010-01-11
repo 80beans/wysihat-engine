@@ -55,6 +55,13 @@ class WysihatGenerator < Rails::Generator::Base
         m.file 'images/icons/text_list_numbers.png',  'public/images/icons/text_list_numbers.png'      
         m.file 'images/icons/text_strikethrough.png', 'public/images/icons/text_strikethrough.png'      
         m.file 'images/icons/text_underline.png',     'public/images/icons/text_underline.png'
+        m.file 'images/icons/text_heading_1.png',     'public/images/icons/text_heading_1.png'
+        m.file 'images/icons/text_heading_2.png',     'public/images/icons/text_heading_2.png'
+        m.file 'images/icons/text_heading_3.png',     'public/images/icons/text_heading_3.png'
+        m.file 'images/icons/text_heading_4.png',     'public/images/icons/text_heading_4.png'
+        m.file 'images/icons/text_heading_5.png',     'public/images/icons/text_heading_5.png'
+        m.file 'images/icons/text_heading_6.png',     'public/images/icons/text_heading_6.png'
+        m.file 'images/icons/cancel.png',             'public/images/icons/cancel.png'
       end
 
       m.migration_template                    'migrations/create_wysihat_files.rb',
