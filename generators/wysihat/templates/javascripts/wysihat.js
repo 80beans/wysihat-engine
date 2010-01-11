@@ -1,10 +1,6 @@
 /*  WysiHat - WYSIWYG JavaScript framework, version 0.2
  *  (c) 2008-2009 Joshua Peek
  *
- *  THIS IS THE 80BEANS VERSION OF WYSIHAT, WE'RE STILL WAITING FOR SOME
- *  CHANGES (http://github.com/80beans/wysihat/commit/5f3e6316c8a00e5e858c934b553c897b50066e7a)
- *  TO BE MERGED BACK INTO MASTER.
- *
  *  WysiHat is freely distributable under the terms of an MIT-style license.
  *--------------------------------------------------------------------------*/
 
@@ -491,42 +487,6 @@ WysiHat.iFrame.Methods = {
     }
 
     return this;
-  },
-
-
-  linkStyleSheet: function(href) {
-    this.whenReady(function(editor){
-      var document = editor.getDocument();
-      if(document.createStyleSheet) { // IE
-        document.createStyleSheet(css);
-      } else {
-        var head = document.documentElement.getElementsByTagName('head')[0];
-        if (!head) {
-          head=document.createElement('head');
-          document.documentElement.insertBefore(head,document.getElementsByTagName('body')[0]);
-        }
-        var link='<link href="'+href+'" media="screen" rel="stylesheet" type="text/css"/>';
-        head=$(head);
-        if (head.insert) { // Safari
-          $(head).insert(link);
-        } else { // everyone else
-          head.innerHTML=head.innerHTML+link;
-        }
-      }
-    });
-  },
-
-
-
-  /**
-   *  WysiHat.iFrame.Methods#getStyle(style) -> string
-   *  - style specificication (i.e. backgroundColor)
-   *
-   *  Returns the style from the element based on the given style
-   */
-  getStyle: function(style) {
-    var document = this.getDocument();
-    return Element.getStyle(document.body, style);
   },
 
   /**
