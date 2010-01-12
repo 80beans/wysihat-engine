@@ -17,7 +17,7 @@ module ActionView
         options["cols"], options["rows"] = size.split("x") if size && size.respond_to?(:split)
 
         if options['buttons'] == nil || options['buttons'] == :all
-          buttons = [:bold, :italic, :underline, :h1, :h2, :h3, :p, :strikethrough, :justify_left, :justify_center, :justify_right, :insert_ordered_list, :insert_unordered_list, :undo, :redo, :link, :html, :image]
+          buttons = [:bold, :italic, :underline, :strikethrough, :h1, :h2, :h3, :p, :justify_left, :justify_center, :justify_right, :insert_ordered_list, :insert_unordered_list, :undo, :redo, :link, :html, :image]
         else
           buttons = options['buttons']
         end
