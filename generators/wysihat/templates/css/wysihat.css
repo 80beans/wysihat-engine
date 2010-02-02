@@ -51,6 +51,8 @@ div.editor_toolbar span {
   background-image: url('../images/icons/text_heading_6.png'); }
 .editor_toolbar .p {
   background-image: url('../images/icons/cancel.png'); }
+.editor_toolbar .paste {
+  background-image: url('../images/icons/paste_word.png'); }
 
 iframe.editor {
   border: 1px solid #999;

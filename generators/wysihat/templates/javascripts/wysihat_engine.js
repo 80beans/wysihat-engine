@@ -44,6 +44,17 @@ var WysihatHelper = {
     Event.observe('html_editor', 'change', function(event) {
       iframe.contentWindow.document.body.innerHTML = $('html_editor').value;
     });
+  },
+  
+  faceboxPaste: function()
+  {
+    facebox.loading();
+    new Effect.Appear($('facebox'), {duration: 0.3});
+    iframe = this
+    facebox.reveal('<textarea id=\"paste_editor\" style=\"width:100%; height:400px;\"></textarea>', null);         
+    Event.observe('paste_editor', 'change', function(event) {
+      iframe.contentWindow.document.body.innerHTML = iframe.contentWindow.document.body.innerHTML + $('paste_editor').value.escapeHTML();
+    });
   }
 };
 
@@ -75,6 +86,7 @@ function wysiHatify(tag_id, buttons){
 			break;
 			case 'paste':
 				toolbar.addButton({label : button.gsub('_','-').camelize().capitalize(), handler: function(editor) { return editor.faceboxPaste(editor); }});
+			break;
 		  case 'h1': case 'h2': case 'h3': case 'h4': case 'h5': case 'h6': case 'p':
 			  toolbar.addButton({label : button.gsub('_','-').camelize().capitalize(), handler: function(editor) { return editor.formatblockSelection(button.toLowerCase()); }});	
 			break;
