@@ -3,19 +3,19 @@ class WysihatFilesController < ApplicationController
     @wysihat_file, @wysihat_files = WysihatFile.new, WysihatFile.all
     render :layout => false
   end
-  
+
   def create
-    @wysihat_file = WysihatFile.new(params[:wysihat_file])
-    
+    @wysihat_file = WysihatFile.new(:file => params[:wysihat_file][:file])
+
     responds_to_parent do
       render :update do |page|
         if(@wysihat_file.save)
-          page.insert_html :bottom, :wysihat_files, :partial => 'wysihat_file', :object => @wysihat_file  
+          page.insert_html :bottom, :wysihat_files, :partial => 'wysihat_file', :object => @wysihat_file
         end
-      end      
+      end
     end
   end
-  
+
   def destroy
     @wysihat_file = WysihatFile.find(params[:id])
     respond_to do |wants|
